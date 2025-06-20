@@ -1,0 +1,34 @@
+body {
+    padding-top: 76px;
+    height: 5000px;
+    font-family: 'Poppins';
+}
+
+.main {
+    padding: 0;
+}
+
+.hero {
+    background-image: url('/images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100dvh;
+    color: white;
+}
+
+.e-bold {
+    font-family: 'Poppins ExtraBold';
+}
+
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    background-color: white;
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#004d7a , #a8eb12);
+    border-radius: 25px;
+}
+
