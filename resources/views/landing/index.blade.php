@@ -11,6 +11,7 @@
                     <p class="lead">
                         <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
                     </p>
+                   
                 </div>  
                 <div class="col-md-6 col-lg-5 text-end">
                     <div class="jumbtron_img">
