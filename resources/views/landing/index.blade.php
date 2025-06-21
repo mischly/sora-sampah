@@ -17,6 +17,7 @@
                       <img src="{{ asset('images/jumbotron.png') }}" alt="jumbotron" width="400">
                     </div>
                 </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, perspiciatis. Voluptates modi quod similique laborum! Expedita dolores, ex, explicabo pariatur architecto dignissimos numquam quo, accusamus illo possimus sequi. Temporibus, recusandae!</p>
             </div>
         </div>
     </div>
