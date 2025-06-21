@@ -17,7 +17,6 @@
                       <img src="{{ asset('images/jumbotron.png') }}" alt="jumbotron" width="400">
                     </div>
                 </div>
-                <p>MANTAP</p>
             </div>
         </div>
     </div>
