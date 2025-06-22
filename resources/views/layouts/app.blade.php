@@ -43,27 +43,27 @@
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         <li  class="nav-item">
-                            <a class="nav-link" href="/">Beranda</a>
+                            <a class="nav-link" href="/">BERANDA</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/">Pelaporan</a>
+                            <a class="nav-link" href="/">PELAPORAN</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/">Artikel</a>
+                            <a class="nav-link" href="/">ARTIKEL</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/">Jadwal</a>
+                            <a class="nav-link" href="/">JADWAL</a>
                         </li>
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">    
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('LOGIN') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('REGISTER') }}</a>
                                 </li>
                             @endif
                         @else
@@ -93,7 +93,8 @@
         <main class="content-wrapper-flex">
             @yield('content')
         </main>
+
+        @include('partials.footer')
     </div>
-    @include('partials.footer')
 </body>
 </html>
