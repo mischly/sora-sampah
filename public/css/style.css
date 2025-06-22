@@ -18,7 +18,7 @@
 
 body {
     padding-top: 76px; 
-    height: 5000px;
+    height: 3000px;
     font-family: Poppins;
 }    
 
@@ -83,9 +83,34 @@ a.btn-join:hover {
     font-size: 40px
 }
 
-.subtitle-jumbotron2 h2 {
+.subtitle-jumbotron2 h1 {
+    font-family: 'Poppins';
     color: #00c600; 
     font-weight: 800;
+}
+
+/* ~ Section - Target and Benefit */
+
+ul.tb-list li {
+    color: #004089;
+    font-size: 1.2rem;
+}
+
+h1.target, h1.benefit {
+    background-color: #004089;
+    color: white;
+    border-radius: 10px;
+    min-height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.8rem;
+    margin-bottom: 2.2rem;
+}
+
+div.row {
+    justify-content: space-between;
 }
 
 .main {

@@ -85,50 +85,38 @@
     <div class="container">
         <div class="subtitle-jumbotron2 text-center py-5">
             <h4>MARI BERSAMA MENJADI BAGIAN PARTISIFASI AKTIF</h4>
-            <h2>SORA SAMPAH BANDUNG</h2>
+            <h1>SORA SAMPAH BANDUNG</h1>
             <a href="/login" class="btn-join btn fw-bold px-4 py-2 mt-3 fs-3">Bergabunglah bersama kami !</a>
         </div>
     </div>
 </section>
 
-{{-- Manfaat dan tujuan --}}
-    <div class="jumbotron d-flex align-items-center min-vh-100">
-        <div class="container py-5">
-            <div class="row justify-content-center align-items-center ">
-                <div class="col-md-6 col-lg-5 text-end me-auto">
-                    <div>
-                    
-                    <div class="align-text-center">
-                        <h1 class="display-6 e-bold fs-9">Misi</h1>
-                    </div>
-                    
-                <ul>
-                    <li> Menyediakan wadah digital bagi partisipasi aktif warga</li>
-                    <li>Meningkatkan efisiensi kerja petugas kebersihan</li>
-                    <li> Menyediakan data akurat untuk pengambilan kebijakan</li>
-                    <li>Mendorong edukasi pengelolaan sampah berkelanjutan</li>
+{{-- Target and Benefit --}}
+<div class="jumbotron d-flex align-items-center min-vh-100">
+    <div class="container py-5">
+        <div class="row align-items-start">
+            <div class="col-md-5 col-lg-5">
+                <h1 class="target e-bold">TUJUAN</h1>
+                <ul class="tb-list mt-3">
+                    <li>Meningkatkan partisipasi aktif warga Kota Bandung</li>
+                    <li>Meningkatkan efisiensi operasional petugas kebersihan</li>
+                    <li>Menyediakan data real-time untuk pengambilan keputusan</li>
+                    <li>Mengurangi penumpukan sampah ilegal</li>
+                    <li>Mendukung program pengelolaan sampah berkelanjutan</li>
                 </ul>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-5"> 
-                    <div>
-                        <h1 class="display-6 e-bold fs-9">Visi</h1>
-                    </div>
-                
-                    <p>Mewujudkan Kota Bandung yang bersih, sehat, dan lestari melalui pengelolaan sampah yang partisipatif dan berbasis teknologi.</p>
-                </div> 
-        
+            </div>
+            <div class="col-md-5 col-lg-5">
+                <h1 class="benefit e-bold">MANFAAT</h1>
+                <ul class="tb-list mt-3">
+                    <li>Lingkungan yang lebih bersih dan sehat</li>
+                    <li>Kemudahan akses informasi pengelolaan sampah</li>
+                    <li>Saluran komunikasi efektif antara warga, petugas dan pemerintah</li>
+                    <li>Peningkatan rasa kepedulian dan tanggung jawab masyarakat</li>
+                    <li>Terciptanya komunitas peduli lingkungan</li>
+                </ul>
             </div>
         </div>
     </div>
-
-
-
-<div class="container">
-    <h1></h1>
 </div>
-
-
 
 @endsection
