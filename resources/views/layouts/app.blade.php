@@ -90,7 +90,7 @@
             </div>
         </nav>
 
-        <main class="">
+        <main class="content-wrapper-flex">
             @yield('content')
         </main>
     </div>

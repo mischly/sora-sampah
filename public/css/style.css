@@ -2,8 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
+/* * Buat ebold poppins */
+.e-bold {
+    font-family: 'Poppins';
+    font-weight: 800;
+}    
 
-/* Scrollbar */
+/* ~ Scrollbar */
 ::-webkit-scrollbar {
     background-color: white;
     width: 7px;
@@ -14,38 +19,52 @@
     border-radius: 25px;
 }
 
-/* Main CSS */
+/* ~ Main CSS */
 
-body {
-    padding-top: 76px; 
-    height: 3000px;
-    font-family: Poppins;
+html, body {
+    height: 100%;
+    font-family: 'Poppins';
+    margin: 0;
 }    
+
+/* ~ Footer - ini agar posisi footer bisa di bawah */
+
+.main {
+    flex: 1;
+    padding-top: 100px;
+
+}
+#app {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrapper-text {
+    flex: 1;
+}
+
+/* ~ end posisi */
+
 
 /* ~ Jumbotron 1 Section */
 
 h1.big-title {
     font-size: 3.3rem;
-    font-family: 'Poppins';
     font-weight: 800;
 }
 
-a.btn-daftar {
+a.daftar {
+    background-color: #fff;
+    color: #004089;
+    text-decoration: none;
     padding: .2rem 1.5rem;
-    font-weight: 900;
-    transition: .5s;
+    margin-top: 1.2rem;
 }
 
-a.btn-daftar::after {
-    content: '';
-    opacity: 0;
-    transition: opacity 0.5s;
-    margin-left: 5px;
-}
-
-a.btn-daftar:hover::after {
-    content: '!';
-    opacity: 1;
+a.daftar:hover {
+    background-color: #004089a5;
+    color: #fff;
 }
 
 p.subtitle {
@@ -113,35 +132,12 @@ div.row {
     justify-content: space-between;
 }
 
-
-/* ini agar posisi footer bisa di bawah */
-
-html, body {
-    height: 100%;
-    margin: 0;
-}
-.main {
-    flex: 1;
-    padding-top: 100px;
-
-}
-#app {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-/* end posisi */
-
 .hero {
     background-image: url('/images/bg.jpg');
     background-size: cover;
     background-position: center;
     min-height: 100dvh;
     color: white;
-}    
-
-.e-bold {
-    font-family: 'Poppins ExtraBold';
 }    
 
 .visi-misi-section {
@@ -246,6 +242,13 @@ html, body {
     transform: translateX(5px);
 }
 
+/* ~ Jumbotron 3 */
+
+img.bottle-img {
+    height: 350px;
+    object-fit: cover;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .content-wrapper {
@@ -270,7 +273,7 @@ html, body {
     .misi-item {
         font-size: 0.95rem;
     }
-
+    
     .visi-misi-section {
         padding: 2rem 0;
     }
@@ -299,7 +302,7 @@ html, body {
     }
 }
 
-/* ini utuk navbar bagian button*/
+/* ~ Navbar - ini utuk navbar bagian button*/
 .navbar-nav .nav-item {
     font-weight: 600;
     margin-left: 10px;
@@ -344,29 +347,28 @@ html, body {
 
 /* end navbar*/
 
+/* ~ Footer - ini untuk footer */
 
-/* ini untuk footer */
-    
-    footer {
-        background-color: #004d7a;
-    }
-    footer ul li{
+footer {
+    background-color: #004d7a;
+}
+footer ul li{
 
-        list-style-type: none;
-    }
-    .text_logo{
-        font-size: 1.1rem;
-        font-size: 24px;
-    }
-    .text_logo h5{
-        font-size: 28px;
-    }
-    .text_logo .span{
-        font-size: 24px;
-    }
-    .container p{
-        margin: 0;
-        padding: 0;
-    }
+    list-style-type: none;
+}
+.text_logo{
+    font-size: 1.1rem;
+    font-size: 24px;
+}
+.text_logo h5{
+    font-size: 28px;
+}
+.text_logo .span{
+    font-size: 24px;
+}
+.container p{
+    margin: 0;
+    padding: 0;
+}
 /* end footer */
 

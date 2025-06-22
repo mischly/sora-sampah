@@ -1,9 +1,6 @@
-<footer style="background-color: #004d99;" class="text-white py-5">
+<footer style="background-color: #004d99;" class="text-white pt-5 pb-3">
     <div class="container">
         <div class="row align-items-start justify-content-between">
-
-
-
             <div class="col-md-6 col-lg-6">
                 <div class="d-flex align-items-center mb-3">
                     <img src="{{ asset('images/favicon.png') }}" lt="Sora Sampah Bandung" width="100px" class="me-3">
@@ -42,6 +39,6 @@
     <hr class="bg-light">
 
     <div class="container text-center">
-        <p class="mb-0">&copy; {{ date('Y') }} Sora Sampah Bandung. All rights reserved.</p>
+        <p class="mb-0">&copy; {{ date('Y') }} Sora Sampah Bandung. Made with love by <a href="https://github.com/mischly/sora-sampah" style="text-decoration: none; color: lime">Kelompok 1</a>.</p>
     </div>
 </footer>
