@@ -13,6 +13,8 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <!--  Bootstrap Icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <!-- CSS --->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -92,5 +94,6 @@
             @yield('content')
         </main>
     </div>
+    @include('partials.footer')
 </body>
 </html>
