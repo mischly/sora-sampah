@@ -113,9 +113,24 @@ div.row {
     justify-content: space-between;
 }
 
+
+/* ini agar posisi footer bisa di bawah */
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
 .main {
-    padding: 0;
-}    
+    flex: 1;
+    padding-top: 100px;
+
+}
+#app {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+/* end posisi */
 
 .hero {
     background-image: url('/images/bg.jpg');
@@ -326,5 +341,32 @@ div.row {
     color: #ffffff ;
     font-weight: bold;
 }
-/* ini utuk navbar bagian button nya sampai sini*/
+
+/* end navbar*/
+
+
+/* ini untuk footer */
+    
+    footer {
+        background-color: #004d7a;
+    }
+    footer ul li{
+
+        list-style-type: none;
+    }
+    .text_logo{
+        font-size: 1.1rem;
+        font-size: 24px;
+    }
+    .text_logo h5{
+        font-size: 28px;
+    }
+    .text_logo .span{
+        font-size: 24px;
+    }
+    .container p{
+        margin: 0;
+        padding: 0;
+    }
+/* end footer */
 
