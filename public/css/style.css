@@ -15,7 +15,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(#004d7a , #a8eb12);
+    background: linear-gradient(#004d7a, #a8eb12);
     border-radius: 25px;
 }
 
@@ -70,7 +70,7 @@ a.daftar:hover {
 p.subtitle {
     text-align: justify;
     font-size: 1rem;
-    opacity: .9;
+    opacity: 0.9;
 }
 
 /* ~ Jumbotron 2 Section - Join Us*/
@@ -84,7 +84,7 @@ img.recycle-img {
     object-fit: cover;
 }
 
-a.btn-join{
+a.btn-join {
     color: #fff;
     background-color: #198754;
 }
@@ -94,17 +94,16 @@ a.btn-join:hover {
     background-color: #ffffff80;
 }
 
-
 .subtitle-jumbotron2 h4 {
-    color: #009F4D; 
-    font-weight: 400; 
+    color: #009f4d;
+    font-weight: 400;
     letter-spacing: 1px;
-    font-size: 40px
+    font-size: 40px;
 }
 
 .subtitle-jumbotron2 h1 {
-    font-family: 'Poppins';
-    color: #00c600; 
+    font-family: "Poppins";
+    color: #00c600;
     font-weight: 800;
 }
 
@@ -115,7 +114,8 @@ ul.tb-list li {
     font-size: 1.2rem;
 }
 
-h1.target, h1.benefit {
+h1.target,
+h1.benefit {
     background-color: #004089;
     color: white;
     border-radius: 10px;
@@ -133,12 +133,12 @@ div.row {
 }
 
 .hero {
-    background-image: url('/images/bg.jpg');
+    background-image: url("/images/bg.jpg");
     background-size: cover;
     background-position: center;
     min-height: 100dvh;
     color: white;
-}    
+}
 
 .visi-misi-section {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -171,7 +171,8 @@ div.row {
 }
 
 /* Badge Styles */
-.visi-badge, .misi-badge {
+.visi-badge,
+.misi-badge {
     display: inline-block;
     padding: 12px 30px;
     border-radius: 25px;
@@ -185,14 +186,15 @@ div.row {
 }
 
 .visi-badge {
-    background: linear-gradient(135deg, #4A90E2, #357ABD);
+    background: linear-gradient(135deg, #4a90e2, #357abd);
 }
 
 .misi-badge {
-    background: linear-gradient(135deg, #4A90E2, #357ABD);
+    background: linear-gradient(135deg, #4a90e2, #357abd);
 }
 
-.visi-badge:hover, .misi-badge:hover {
+.visi-badge:hover,
+.misi-badge:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
@@ -215,7 +217,6 @@ div.row {
     margin: 0;
 }
 
-
 .misi-item {
     position: relative;
     padding: 8px 0 8px 25px;
@@ -228,17 +229,17 @@ div.row {
 }
 
 .misi-item::before {
-    content: '•';
+    content: "•";
     position: absolute;
     left: 0;
     top: 8px;
-    color: #4A90E2;
+    color: #4a90e2;
     font-size: 1.5rem;
     font-weight: bold;
 }
 
 .misi-item:hover {
-    color: #4A90E2;
+    color: #4a90e2;
     transform: translateX(5px);
 }
 
@@ -255,21 +256,22 @@ img.bottle-img {
         padding-left: 0;
         margin-top: 2rem;
     }
-    
+
     .logo-img {
         max-width: 250px;
     }
-    
+
     .visi-text {
         padding-right: 0;
         text-align: left;
     }
-    
-    .visi-badge, .misi-badge {
+
+    .visi-badge,
+    .misi-badge {
         font-size: 1rem;
         padding: 10px 25px;
     }
-    
+
     .misi-item {
         font-size: 0.95rem;
     }
@@ -277,7 +279,7 @@ img.bottle-img {
     .visi-misi-section {
         padding: 2rem 0;
     }
-    
+
     .row.align-items-center {
         min-height: auto;
     }
@@ -287,16 +289,17 @@ img.bottle-img {
     .logo-img {
         max-width: 200px;
     }
-    
-    .visi-badge, .misi-badge {
+
+    .visi-badge,
+    .misi-badge {
         font-size: 0.9rem;
         padding: 8px 20px;
     }
-    
+
     .visi-text {
         font-size: 1rem;
     }
-    
+
     .misi-item {
         font-size: 0.9rem;
     }
@@ -309,7 +312,6 @@ img.bottle-img {
     margin-right: 10px;
 }
 
-
 .navbar-nav .nav-link {
     color: black;
     font-size: 15px;
@@ -317,7 +319,6 @@ img.bottle-img {
     padding-left: 8px;
     padding-right: 8px;
 }
-
 
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link:hover {
@@ -327,21 +328,20 @@ img.bottle-img {
     padding: 5px 15px;
 }
 
-
 .navbar-nav .nav-link[href*="login"] {
-    color: #4cd137 ;
+    color: #4cd137;
     font-weight: bold;
 }
 .navbar-nav .nav-link[href*="login"]:hover {
-    color: #ffffff ;
+    color: #ffffff;
     font-weight: bold;
 }
 .navbar-nav .nav-link[href*="register"] {
-    color: #2ecc71 ;
+    color: #2ecc71;
     font-weight: bold;
 }
-.navbar-nav .nav-link[href*="register"]:hover{
-    color: #ffffff ;
+.navbar-nav .nav-link[href*="register"]:hover {
+    color: #ffffff;
     font-weight: bold;
 }
 
@@ -371,4 +371,3 @@ footer ul li{
     padding: 0;
 }
 /* end footer */
-
