@@ -7,12 +7,12 @@
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-6 col-lg-5">
-                    <h1 class="display-6 e-bold fs-9">WEBSITE SORA <br> SAMPAH BANDUNG</h1>
-                    <p>Sora Sampah Bandung merupakan solusi digital teriintegrasi yang menghubungkan tiga pilar utama dalam pengelolaan sampah yang melibatkan warga, petugas kebersihan, dan pemerintah kota Bandung.</p>
+                    <h1 class="big-title display-6 e-bold">WEBSITE SORA <br> SAMPAH BANDUNG</h1>
+                    <p class="subtitle">Sora Sampah Bandung merupakan solusi digital teriintegrasi yang menghubungkan tiga pilar utama dalam pengelolaan sampah yang melibatkan warga, petugas kebersihan, dan pemerintah kota Bandung.</p>
                     <p class="lead">
-                        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                        <a class="btn-daftar btn btn-light text-primary btn-lg" href="#" role="button">Daftar</a>
                     </p>
-                   
+ 
                 </div>  
                 <div class="col-md-6 col-lg-5 text-end">
                     <div class="jumbtron_img">
@@ -24,44 +24,59 @@
     </div>
 </div>
 
+{{-- Visi Misi Section --}}
+<section class="visi-misi-section py-5">
+    <div class="container">
+        <div class="row align-items-center min-vh-100">
+            {{-- Logo Section --}}
+            <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
+                <div class="logo-container text-center">
+                    <img src="{{ asset('images/favicon.png') }}" 
+                         alt="Logo Pengelolaan Sampah Digital" 
+                         class="img-fluid logo-img">
+                </div>
+            </div>
 
-
-  {{-- visi misi --}}
-    <div class="jumbotron d-flex align-items-center min-vh-100">
-        <div class="container">
-            <div class="row justify-content-center align-items-center ">
-                <div class="col-md-6 col-lg-5 text-end me-auto">
-                    <div class="jumbtron_img">
-                      <img src="{{ asset('images/favicon.png') }}" alt="jumbotron" width="400">
+            {{-- Visi Misi Content --}}
+            <div class="col-lg-7 col-md-6">
+                <div class="content-wrapper">
+                    {{-- Visi Section --}}
+                    <div class="visi-section mb-5">
+                        <div class="visi-badge-container mb-3">
+                            <span class="visi-badge">VISI</span>
+                        </div>
+                        <p class="visi-text">
+                            Mewujudkan Kota Bandung yang bersih, sehat, dan 
+                            lestari melalui pengelolaan sampah yang partisipatif 
+                            dan berbasis teknologi.
+                        </p>
                     </div>
-                  </div>
 
-                <div class="col-md-6 col-lg-5"> 
-                    <div class="col-md-2 col-lg-2">
-                        <h1 class="display-6 e-bold fs-9"  style="background-color: #004089; padding: 5px; color: white; border-radius:15px;">Visi</h1>
-                    </div> <br>
-                    <ul>
-                        <li style="list-style-type: none;">Mewujudkan Kota Bandung yang bersih, sehat, dan lestari melalui pengelolaan sampah yang partisipatif dan berbasis teknologi.</li>
-                    </ul>
-
-                    <br>
-
-                    <div class="col-md-2 col-lg-2">
-                        <h1 class="display-6 e-bold fs-9" style="background-color: #004089; padding: 5px; color: white; border-radius:15px;">Misi</h1>
-                    </div><br>
-                    
-                   <ul>
-                    <li> Menyediakan wadah digital bagi partisipasi aktif warga</li>
-                    <li>Meningkatkan efisiensi kerja petugas kebersihan</li>
-                    <li> Menyediakan data akurat untuk pengambilan kebijakan</li>
-                    <li>Mendorong edukasi pengelolaan sampah berkelanjutan</li>
-                   </ul>
-    
-                </div> 
-           
+                    {{-- Misi Section --}}
+                    <div class="misi-section">
+                        <div class="misi-badge-container mb-4">
+                            <span class="misi-badge">MISI</span>
+                        </div>
+                        <ul class="misi-list">
+                            <li class="misi-item">
+                                Menyediakan wadah digital bagi partisipasi aktif warga
+                            </li>
+                            <li class="misi-item">
+                                Meningkatkan efisiensi kerja petugas kebersihan
+                            </li>
+                            <li class="misi-item">
+                                Menyediakan data akurat untuk pengambilan kebijakan
+                            </li>
+                            <li class="misi-item">
+                                Mendorong edukasi pengelolaan sampah berkelanjutan
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</section>
 
 <hr style="height: 4px; background-color: #004089; border: none;">
 
