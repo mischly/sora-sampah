@@ -1,3 +1,6 @@
+/* ! FONT */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
 /* Scrollbar */
 ::-webkit-scrollbar {
     background-color: white;
@@ -17,6 +20,8 @@ body {
     font-family: 'Poppins';
 }    
 
+/* ~ Jumbotron 1 Section */
+
 h1.big-title {
     font-size: 3.3rem;
 }
@@ -28,21 +33,55 @@ a.btn-daftar {
 }
 
 a.btn-daftar::after {
-  content: '';
-  opacity: 0;
-  transition: opacity 0.5s;
+    content: '';
+    opacity: 0;
+    transition: opacity 0.5s;
   margin-left: 5px;
 }
 
 a.btn-daftar:hover::after {
-  content: '!';
-  opacity: 1;
+    content: '!';
+    opacity: 1;
 }
 
 p.subtitle {
     text-align: justify;
     font-size: 1rem;
     opacity: .9;
+}
+
+/* ~ Jumbotron 2 Section - Join Us*/
+
+.join-us {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+img.recycle-img {
+    height: 550px;
+    object-fit: cover;
+}
+
+a.btn-join{
+    color: #fff;
+    background-color: #198754;
+}
+
+a.btn-join:hover {
+    color: #198754;
+    background-color: #ffffff80;
+}
+
+
+.subtitle-jumbotron2 h4 {
+    color: #009F4D; 
+    font-weight: 400; 
+    letter-spacing: 1px;
+    font-size: 40px
+}
+
+.subtitle-jumbotron2 h2 {
+    color: #00c600; 
+    font-weight: 800;
 }
 
 .main {

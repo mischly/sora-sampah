@@ -78,23 +78,18 @@
     </div>
 </section>
 
-<hr style="height: 4px; background-color: #004089; border: none;">
 
-
-
- {{-- ajakan --}}
-    <div class="text-center py-5" style="background-color: #f8f9fa;">
-        <h4 style="color: #009F4D; font-weight: 400; letter-spacing: 1px; font-size: 40px">
-            MARI BERSAMA MENJADI BAGIAN PARTISIFASI AKTIF
-        </h4>
-        <h2 style="color: #00c600; font-weight: 800;">
-            SORA SAMPAH BANDUNG
-        </h2>
-        <a href="/login" class="btn btn-success fw-bold px-4 py-2 mt-3" style="border-radius: 10px;">
-            LOG IN
-        </a>
+{{-- Join with us section --}}
+<img src="{{ asset('images/jumbotron2.jpg') }}" alt="recycle" class="recycle-img img-fluid w-100">
+<section class="join-us py-5">
+    <div class="container">
+        <div class="subtitle-jumbotron2 text-center py-5">
+            <h4>MARI BERSAMA MENJADI BAGIAN PARTISIFASI AKTIF</h4>
+            <h2>SORA SAMPAH BANDUNG</h2>
+            <a href="/login" class="btn-join btn fw-bold px-4 py-2 mt-3 fs-3">Bergabunglah bersama kami !</a>
+        </div>
     </div>
-<hr style="height: 4px; background-color: #004089; border: none;">
+</section>
 
 {{-- Manfaat dan tujuan --}}
     <div class="jumbotron d-flex align-items-center min-vh-100">
