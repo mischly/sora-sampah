@@ -4,8 +4,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('landing.index');
+    return view('landing.pelaporan');
 });
+
+
 
 Auth::routes();
 
