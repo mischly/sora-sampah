@@ -99,6 +99,108 @@ a.btn-join:hover {
     font-weight: 800;
 }
 
+         /* ini untuk halaman pelaporan */
+            /* jumboroton4 */   
+
+            .jumbotron-wrapper {
+                margin-top: 70px; 
+            }
+
+            .jumbotron-image {
+                max-height: 500px;
+                object-fit: cover;
+            }
+
+            /* Gaya blok hijau bulat seperti pada gambar */
+            .jumbotron-overlay {
+                background-color: #71BF3F; 
+                border-radius: 200px 0 0 200px;
+                font-family: 'Poppins'; 
+                /* padding: 10px 10px; */
+                /* margin-top: -5px;    */
+                margin-left: 200px;
+                color: white;
+            }
+            /* Container tabel */
+            .table-responsive {
+                margin-top: 20px;
+                border: 2px solid #5D7731;
+                overflow: hidden;
+            }
+
+            /* Tabel utama */
+            .table-custom {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            /* Header tabel */
+            .table-custom thead {
+                background-color: #d9d9d9; /* warna abu header */
+                color: #000;
+                font-weight: bold;
+            }
+
+            /* Sel header */
+            .table-custom thead th {
+                padding: 10px;
+                text-align: center;
+                border: 1px solid #ccc;
+            }
+
+            /* Baris data */
+            .table-custom tbody tr {
+                background-color: #5D7731; /* hijau olive gelap */
+                color: white;
+            }
+
+            /* Sel data */
+            .table-custom tbody td {
+                padding: 12px 10px;
+                border: 1px solid #4a6328;
+                text-align: center;
+            }
+
+            /* Lebarkan kolom laporan */
+            .table-custom tbody td:nth-child(2) {
+                text-align: left;
+                padding-left: 15px;
+            }
+
+            input[type="text"] {
+                background-color: #71BF3F;
+                padding: 10px 15px; 
+                border:none; 
+                color:white;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            }
+
+            h4.fw-bold {
+                color: #5D7731;
+                font-family: 'Poppins';
+                font-size: 24px;
+            }
+
+            .container .btn {
+                background-color: #71BF3F;
+                color: white;
+                font-family: 'Poppins'; 
+                font-size: 1.2rem;
+                font-weight: bold;
+                border: none;
+                border-radius: 999px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+                transition: background-color 0.3s ease;
+            }
+
+            .container .btn :hover {
+                background-color: #5D7731;
+            }
+        /* end halaman pelaporan */
+
+
+
+
 /* ~ Section - Target and Benefit */
 
 ul.tb-list li {

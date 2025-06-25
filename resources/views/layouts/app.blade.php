@@ -46,7 +46,7 @@
                             <a class="nav-link" href="/">BERANDA</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/">PELAPORAN</a>
+                            <a class="nav-link" href="/landing/plaporan">PELAPORAN</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/">ARTIKEL</a>
