@@ -9,7 +9,7 @@
 
     <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
     <title>{{ config('app.name', 'Sora Sampah Bandung') }}</title>
-
+    
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
@@ -19,6 +19,7 @@
     <!-- CSS --->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/pelaporan.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
     
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -58,13 +59,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item login">    
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('LOGIN') }}</a>
+                                    <a class="nav-link {{ request()->is('login') ? 'active' : '' }}" href="{{ route('login') }}">{{ __('LOGIN') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item register">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('REGISTER') }}</a>
+                                    <a class="nav-link {{ request()->is('register') ? 'active' : '' }}" href="{{ route('register') }}">{{ __('REGISTER') }}</a>
                                 </li>
                             @endif
                         @else
@@ -95,7 +96,9 @@
             @yield('content')
         </main>
 
-        @include('partials.footer')
+        @if (!View::hasSection('no-footer'))
+            @include('partials.footer')
+        @endif
     </div>
 </body>
 </html>
