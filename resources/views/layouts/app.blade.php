@@ -18,6 +18,7 @@
 
     <!-- CSS --->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pelaporan.css') }}">
     
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -43,10 +44,10 @@
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         <li  class="nav-item">
-                            <a class="nav-link" href="/">BERANDA</a>
+                            <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="/">BERANDA</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/landing/plaporan">PELAPORAN</a>
+                            <a class="nav-link {{ request()->is('pelaporan') ? 'active' : '' }}" href="{{ route('pelaporan.index') }}">PELAPORAN</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/">ARTIKEL</a>
@@ -56,13 +57,13 @@
                         </li>
                         @guest
                             @if (Route::has('login'))
-                                <li class="nav-item">    
+                                <li class="nav-item login">    
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('LOGIN') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
-                                <li class="nav-item">
+                                <li class="nav-item register">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('REGISTER') }}</a>
                                 </li>
                             @endif
