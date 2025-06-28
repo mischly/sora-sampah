@@ -25,10 +25,10 @@
     <h1 class="big-title display-6 e-bold tx-info text-#04709A" style="color: #04709A;">Informasi Terbaru</h1>
 </div>
 
-<div class="content">
-    <div class="grid">
+<div class="content-artikel">
+    <div class="grid-artikel">
         <!-- Kartu 1 -->
-        <div class="card">
+        <div class="card-artikel">
             <div class="card-1 position-relative">
                 <img src="{{ asset('images/jumbotron7.JPG') }}" alt class="card-img" />
                 <div class="blog">                
@@ -37,7 +37,7 @@
             </div>
             <div class="card-body">
                 <p class="date">| 06 Mei 2025</p><br>
-                <h3>Berita Terbaru Tentang Sampah Hari Ini 22 Juni 2025........</h3><br>
+                <h3>Berita Terbaru Tentang Sampah Hari Ini 22 Juni 2025 ...</h3><br>
                 <p class="excerpt">
                     Sampah Makan Bergizi Gratis Jadi Masalah Baru di Sekolah · Pemkot Yogyakarta Tambah Alat Penghadang Sampah di Sungai · Gubernur Jakarta Pramono Sebut Sampah ...
                 </p>
@@ -53,7 +53,7 @@
         </div>
 
         <!-- Kartu 2 -->
-        <div class="card">
+        <div class="card-artikel">
             <div class="card-1 position-relative">
                 <img src="{{ asset('images/jumbotron8.jpg') }}" alt class="card-img" />
                 <div class="blog">                

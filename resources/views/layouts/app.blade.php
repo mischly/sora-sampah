@@ -18,8 +18,9 @@
 
     <!-- CSS --->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/pelaporan.css') }}">
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pelaporan.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/artikel.css') }}">
     
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -51,7 +52,7 @@
                             <a class="nav-link {{ request()->is('pelaporan') ? 'active' : '' }}" href="{{ route('pelaporan.index') }}">PELAPORAN</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/">ARTIKEL</a>
+                            <a class="nav-link {{ request()->is('artikel') ? 'active' : '' }}" href="{{ route('artikel.index') }}">ARTIKEL</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/">JADWAL</a>
