@@ -21,7 +21,7 @@
         <h4 class="fw-bold">Data Sampah Ilegal</h4>
         <div class="d-flex justify-content-between align-items-center mb-3 mt-4">
             <button class="btn btn-success rounded-pill px-5 py-3">+ Lapor sampah</button>
-            <input type="text"  placeholder="Cari..." class="search">
+            <input type="text"  placeholder="Cari..." class="search pelaporan">
         </div>
 
         <div class="table-responsive">

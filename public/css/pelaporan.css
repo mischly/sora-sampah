@@ -71,7 +71,7 @@ input.search:focus {
     padding-left: 15px;
 }
 
-input[type="text"] {
+input.pelaporan[type="text"] {
     background-color: #71BF3F;
     padding: 10px 15px; 
     border:none; 

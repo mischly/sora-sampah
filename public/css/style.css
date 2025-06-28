@@ -393,3 +393,7 @@ footer ul li{
         font-size: 0.9rem;
     }
 }
+
+img.register {
+    border-radius: 28px;
+}

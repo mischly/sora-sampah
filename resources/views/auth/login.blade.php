@@ -52,7 +52,7 @@
                                 </div>
 
                                 <div class="mb-3 text-center small">
-                                    Belum punya akun? <a href="{{ route('register') }}">Registrasi</a>
+                                    Belum punya akun? <a href="{{ route('register') }}">Register</a>
                                 </div>
 
                                 <div class="d-grid">
