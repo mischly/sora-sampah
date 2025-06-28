@@ -27,7 +27,7 @@
 }
 
 
-.card-body {
+div.card-body {
     padding: 20px;
     display: flex;
     flex-direction: column;
