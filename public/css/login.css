@@ -1,0 +1,112 @@
+.hero-login {
+    background-image: url("/images/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 100dvh;
+}
+
+.hero-login {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #004d7a, #00bf72);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+}
+
+.input-icon {
+    position: relative;
+}
+
+.icon-input {
+    position: absolute;
+    top: 50%;
+    left: 18px;
+    transform: translateY(-50%);
+    color: #004d7a;
+    font-size: 1.2rem;
+    z-index: 2;
+}
+
+.input-icon input {
+    padding-left: 2.5rem;
+}
+
+.social-login {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.social-icon:hover {
+    transform: scale(1.05);
+}
+
+.social-icon img {
+    width: 22px;
+    height: 22px;
+}
+
+/* HAPUS SEMUA CSS .input-icon dan .icon-input yang lama */
+/* GANTI DENGAN CSS INI */
+
+.input-wrapper {
+    position: relative;
+    display: block;
+}
+
+.input-wrapper .form-control {
+    padding-left: 2.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 50px;
+}
+
+.input-wrapper .form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.input-wrapper .input-icon {
+    position: absolute;
+    left: 13px;
+    top: 52%;
+    transform: translateY(-50%);
+    color: #004d7a;
+    font-size: 1.2rem;
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* Error state - TIDAK menggunakan Bootstrap is-invalid */
+.input-wrapper.error .form-control {
+    border: 2px solid #dc3545;
+    padding-left: 2.5rem;
+}
+
+.input-wrapper.error .form-control:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+}

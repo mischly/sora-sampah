@@ -31,9 +31,13 @@ html, body {
 /* ~ Footer - ini agar posisi footer bisa di bawah */
 
 #app {
-    min-height: 100%;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+}
+
+main.content-wrapper-flex {
+    flex: 1;
 }
 
 /* ~ end posisi */
@@ -79,6 +83,7 @@ img.recycle-img {
 a.btn-join {
     color: #fff;
     background-color: #198754;
+    border-radius: 8px;
 }
 
 a.btn-join:hover {
@@ -99,7 +104,319 @@ a.btn-join:hover {
     font-weight: 800;
 }
 
-         /* ini untuk halaman pelaporan */
+/* ~ Section - Target and Benefit */
+
+ul.tb-list li {
+    color: #004089;
+    font-size: 1.2rem;
+}
+
+h1.target,
+h1.benefit {
+    background-color: #004089;
+    color: white;
+    border-radius: 10px;
+    min-height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.8rem;
+    margin-bottom: 2.2rem;
+}
+
+div.row {
+    justify-content: space-between;
+}
+
+.hero {
+    background-image: url("/images/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 100dvh;
+    color: white;
+}
+
+.visi-misi-section {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Logo Styles */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.logo-img {
+    max-width: 350px;
+    height: auto;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    padding-left: 6rem;
+}
+
+/* Badge Styles */
+.visi-badge,
+.misi-badge {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    color: white;
+    text-transform: uppercase;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.visi-badge {
+    background: linear-gradient(135deg, #4a90e2, #357abd);
+}
+
+.misi-badge {
+    background: linear-gradient(135deg, #4a90e2, #357abd);
+}
+
+.visi-badge:hover,
+.misi-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Visi Text */
+.visi-text {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #2c3e50;
+    font-weight: 400;
+    text-align: justify;
+    margin: 0;
+    padding-right: 2rem;
+}
+
+/* Misi List */
+.misi-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.misi-item {
+    position: relative;
+    padding: 8px 0 8px 25px;
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #2c3e50;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+
+.misi-item::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    color: #4a90e2;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.misi-item:hover {
+    color: #4a90e2;
+    transform: translateX(5px);
+}
+
+/* ~ Jumbotron 3 */
+
+img.bottle-img {
+    height: 350px;
+    object-fit: cover;
+}
+
+/* ~ Navbar - ini utuk navbar bagian button*/
+
+.navbar-nav .nav-item {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.navbar-nav .login,
+.navbar-nav .register {
+    margin: 0;
+    padding: 0 5px;
+}
+
+.navbar-nav .login {
+    margin-left: .5rem;
+}
+.navbar-nav .login a {
+    color: #009f4d;
+}
+
+.navbar-nav .register a {
+    color: #009f4d;
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    font-weight: 600;
+    color: black;
+    font-size: 15px;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+}
+
+/* Garis bawah default: tidak terlihat */
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #4cd137;
+    transition: width 0.3s ease;
+}
+
+/* Saat hover: garis lebar penuh dari kiri ke kanan */
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 100%;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #595151;
+}
+
+.navbar-nav .nav-link.active {
+    color: #4cd137;
+}
+
+/* end navbar*/
+
+/* ~ Footer - ini untuk footer */
+
+footer {
+    background-color: #004d7a;
+}
+footer ul li{
+    list-style-type: none;
+}
+.text_logo{
+    font-size: 1.1rem;
+    font-size: 24px;
+}
+.text_logo h5{
+    font-size: 28px;
+}
+.text_logo .span{
+    font-size: 24px;
+}
+.container p{
+    margin: 0;
+    padding: 0;
+}
+/* end footer */
+
+
+
+/* - RESPONSIVE */
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        padding-left: 0;
+        margin-top: 2rem;
+    }
+
+    .logo-img {
+        max-width: 250px;
+    }
+
+    .visi-text {
+        padding-right: 0;
+        text-align: left;
+    }
+
+    .visi-badge,
+    .misi-badge {
+        font-size: 1rem;
+        padding: 10px 25px;
+    }
+
+    .misi-item {
+        font-size: 0.95rem;
+    }
+    
+    .visi-misi-section {
+        padding: 2rem 0;
+    }
+
+    .row.align-items-center {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        padding-top: 1.9rem;
+    }
+
+    .logo-img {
+        max-width: 200px;
+    }
+
+    .visi-badge,
+    .misi-badge {
+        font-size: 0.9rem;
+        padding: 8px 20px;
+    }
+
+    .visi-text {
+        font-size: 1rem;
+    }
+
+    .misi-item {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ini untuk halaman pelaporan */
             /* jumboroton4 */   
 
             .jumbotron-wrapper {
@@ -276,276 +593,3 @@ a.btn-join:hover {
 
 
 
-
-/* ~ Section - Target and Benefit */
-
-ul.tb-list li {
-    color: #004089;
-    font-size: 1.2rem;
-}
-
-h1.target,
-h1.benefit {
-    background-color: #004089;
-    color: white;
-    border-radius: 10px;
-    min-height: 55px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    font-size: 1.8rem;
-    margin-bottom: 2.2rem;
-}
-
-div.row {
-    justify-content: space-between;
-}
-
-.hero {
-    background-image: url("/images/bg.jpg");
-    background-size: cover;
-    background-position: center;
-    min-height: 100dvh;
-    color: white;
-}
-
-.visi-misi-section {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    min-height: 100vh;
-    position: relative;
-}
-
-/* Logo Styles */
-.logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.logo-img {
-    max-width: 350px;
-    height: auto;
-    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
-    transition: transform 0.3s ease;
-}
-
-.logo-img:hover {
-    transform: scale(1.05);
-}
-
-/* Content Wrapper */
-.content-wrapper {
-    padding-left: 6rem;
-}
-
-/* Badge Styles */
-.visi-badge,
-.misi-badge {
-    display: inline-block;
-    padding: 12px 30px;
-    border-radius: 25px;
-    font-weight: 700;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-    color: white;
-    text-transform: uppercase;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s ease;
-}
-
-.visi-badge {
-    background: linear-gradient(135deg, #4a90e2, #357abd);
-}
-
-.misi-badge {
-    background: linear-gradient(135deg, #4a90e2, #357abd);
-}
-
-.visi-badge:hover,
-.misi-badge:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
-}
-
-/* Visi Text */
-.visi-text {
-    font-size: 1.3rem;
-    line-height: 1.8;
-    color: #2c3e50;
-    font-weight: 400;
-    text-align: justify;
-    margin: 0;
-    padding-right: 2rem;
-}
-
-/* Misi List */
-.misi-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.misi-item {
-    position: relative;
-    padding: 8px 0 8px 25px;
-    margin-bottom: 12px;
-    font-size: 1.3rem;
-    line-height: 1.6;
-    color: #2c3e50;
-    font-weight: 400;
-    transition: all 0.3s ease;
-}
-
-.misi-item::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    top: 8px;
-    color: #4a90e2;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.misi-item:hover {
-    color: #4a90e2;
-    transform: translateX(5px);
-}
-
-/* ~ Jumbotron 3 */
-
-img.bottle-img {
-    height: 350px;
-    object-fit: cover;
-}
-
-/* ~ Navbar - ini utuk navbar bagian button*/
-.navbar-nav .nav-item {
-    font-weight: 600;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.navbar-nav .nav-link {
-    color: black;
-    font-size: 15px;
-    transition: 0.3s;
-    padding: 5px 15px;
-}
-
-.navbar-nav .nav-link.active,
-.navbar-nav .nav-link:hover {
-    background-color: #047387;
-    color: white !important;
-    border-radius: 10px;
-    padding: 5px 15px;
-}
-
-.navbar-nav .nav-link[href*="login"] {
-    color: #4cd137;
-    font-weight: bold;
-}
-.navbar-nav .nav-link[href*="login"]:hover {
-    color: #ffffff;
-    background-color: #4cd137;
-    font-weight: bold;
-}
-.navbar-nav .nav-link[href*="register"] {
-    color: #4a90e2;
-    font-weight: bold;
-}
-.navbar-nav .nav-link[href*="register"]:hover {
-    color: #ffffff;
-    background-color: #4a90e2;
-    font-weight: bold;
-}
-
-/* end navbar*/
-
-/* ~ Footer - ini untuk footer */
-
-footer {
-    background-color: #004d7a;
-}
-footer ul li{
-
-    list-style-type: none;
-}
-.text_logo{
-    font-size: 1.1rem;
-    font-size: 24px;
-}
-.text_logo h5{
-    font-size: 28px;
-}
-.text_logo .span{
-    font-size: 24px;
-}
-.container p{
-    margin: 0;
-    padding: 0;
-}
-/* end footer */
-
-
-
-/* - RESPONSIVE */
-
-@media (max-width: 768px) {
-    .content-wrapper {
-        padding-left: 0;
-        margin-top: 2rem;
-    }
-
-    .logo-img {
-        max-width: 250px;
-    }
-
-    .visi-text {
-        padding-right: 0;
-        text-align: left;
-    }
-
-    .visi-badge,
-    .misi-badge {
-        font-size: 1rem;
-        padding: 10px 25px;
-    }
-
-    .misi-item {
-        font-size: 0.95rem;
-    }
-    
-    .visi-misi-section {
-        padding: 2rem 0;
-    }
-
-    .row.align-items-center {
-        min-height: auto;
-    }
-}
-
-@media (max-width: 576px) {
-    .hero {
-        padding-top: 1.9rem;
-    }
-
-    .logo-img {
-        max-width: 200px;
-    }
-
-    .visi-badge,
-    .misi-badge {
-        font-size: 0.9rem;
-        padding: 8px 20px;
-    }
-
-    .visi-text {
-        font-size: 1rem;
-    }
-
-    .misi-item {
-        font-size: 0.9rem;
-    }
-}
