@@ -8,6 +8,11 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
+                @if (session('success'))
+                    <div class="text-success text-center mb-3 small">
+                        {{ session('success') }}
+                    </div>
+                @endif
                 <div class="card-login card border-0 shadow-lg rounded-4 p-4 py-5" style="background-color: #f8f9fa;">
                     <div class="row align-items-center">
                         <!-- Form Kiri -->
