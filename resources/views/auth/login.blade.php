@@ -3,6 +3,10 @@
 @section('no-footer')
 @endsection
 
+@push('styles')
+    @vite(['resources/css/auth/auth.css'])
+@endpush
+
 @section('content')
 <div class="hero-login">
     <div class="container">

@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@push('styles')
+    @vite(['resources/css/page-css/artikel.css'])
+@endpush
+
 @section('content')
 
 <div class="jumbotron d-flex align-items-center min-vh-100 bg-white">   

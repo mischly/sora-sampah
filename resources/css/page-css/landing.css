@@ -1,0 +1,264 @@
+/* ~ Jumbotron 1 Section */
+
+h1.big-title {
+    font-size: 3.3rem;
+    font-weight: 800;
+}
+
+a.daftar {
+    background-color: #fff;
+    color: #004089;
+    text-decoration: none;
+    padding: .2rem 1.5rem;
+    margin-top: 1.2rem;
+}
+
+a.daftar:hover {
+    background-color: #004089a5;
+    color: #fff;
+}
+
+p.subtitle {
+    text-align: justify;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* ~ Jumbotron 2 Section - Join Us*/
+
+.join-us {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+img.recycle-img {
+    height: 550px;
+    object-fit: cover;
+}
+
+a.btn-join {
+    color: #fff;
+    background-color: #198754;
+    border-radius: 8px;
+}
+
+a.btn-join:hover {
+    color: #198754;
+    background-color: #ffffff80;
+}
+
+.subtitle-jumbotron2 h4 {
+    color: #009f4d;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size: 40px;
+}
+
+.subtitle-jumbotron2 h1 {
+    font-family: "Poppins";
+    color: #00c600;
+    font-weight: 800;
+}
+
+/* ~ Section - Target and Benefit */
+
+ul.tb-list li {
+    color: #004089;
+    font-size: 1.2rem;
+}
+
+h1.target,
+h1.benefit {
+    background-color: #004089;
+    color: white;
+    border-radius: 10px;
+    min-height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.8rem;
+    margin-bottom: 2.2rem;
+}
+
+div.row {
+    justify-content: space-between;
+}
+
+.hero {
+    background-image: url("../images/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 100dvh;
+    color: white;
+}
+
+.visi-misi-section {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Logo Styles */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.logo-img {
+    max-width: 350px;
+    height: auto;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    padding-left: 6rem;
+}
+
+/* Badge Styles */
+.visi-badge,
+.misi-badge {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    color: white;
+    text-transform: uppercase;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.visi-badge {
+    background: linear-gradient(135deg, #4a90e2, #357abd);
+}
+
+.misi-badge {
+    background: linear-gradient(135deg, #4a90e2, #357abd);
+}
+
+.visi-badge:hover,
+.misi-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Visi Text */
+.visi-text {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #2c3e50;
+    font-weight: 400;
+    text-align: justify;
+    margin: 0;
+    padding-right: 2rem;
+}
+
+/* Misi List */
+.misi-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.misi-item {
+    position: relative;
+    padding: 8px 0 8px 25px;
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #2c3e50;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+
+.misi-item::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    color: #4a90e2;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.misi-item:hover {
+    color: #4a90e2;
+    transform: translateX(5px);
+}
+
+/* ~ Jumbotron 3 */
+
+img.bottle-img {
+    height: 350px;
+    object-fit: cover;
+}
+
+
+/* - RESPONSIVE */
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        padding-left: 0;
+        margin-top: 2rem;
+    }
+
+    .logo-img {
+        max-width: 250px;
+    }
+
+    .visi-text {
+        padding-right: 0;
+        text-align: left;
+    }
+
+    .visi-badge,
+    .misi-badge {
+        font-size: 1rem;
+        padding: 10px 25px;
+    }
+
+    .misi-item {
+        font-size: 0.95rem;
+    }
+    
+    .visi-misi-section {
+        padding: 2rem 0;
+    }
+
+    .row.align-items-center {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        padding-top: 1.9rem;
+    }
+
+    .logo-img {
+        max-width: 200px;
+    }
+
+    .visi-badge,
+    .misi-badge {
+        font-size: 0.9rem;
+        padding: 8px 20px;
+    }
+
+    .visi-text {
+        font-size: 1rem;
+    }
+
+    .misi-item {
+        font-size: 0.9rem;
+    }
+}

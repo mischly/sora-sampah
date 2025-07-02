@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class jadwalController extends Controller
+class JadwalController extends Controller
 {
     public function index()
     {

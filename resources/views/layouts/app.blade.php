@@ -17,14 +17,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <!-- CSS --->
+    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/pelaporan.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/artikel.css') }}">   
-    <link rel="stylesheet" href="{{ asset('css/jadwal.css') }}">
+
     
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @stack('styles')
 </head>
 <body>
     <div id="app">
@@ -56,7 +56,7 @@
                             <a class="nav-link {{ request()->is('artikel') ? 'active' : '' }}" href="{{ route('artikel.index') }}">ARTIKEL</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" {{ request()->is('jadwal') ? 'active' : '' }}" href="{{ route('jadwal.index') }}">JADWAL</a>
+                            <a class="nav-link {{ request()->is('jadwal') ? 'active' : '' }}" href="{{ route('jadwal.index') }}">JADWAL</a>
                         </li>
                         @guest
                             @if (Route::has('login'))

@@ -7,6 +7,11 @@ export default defineConfig({
             input: [
                 'resources/sass/app.scss',
                 'resources/js/app.js',
+                'resources/css/page-css/landing.css',
+                'resources/css/page-css/pelaporan.css',
+                'resources/css/page-css/artikel.css',
+                'resources/css/page-css/jadwal.css',
+                'resources/css/auth/auth.css',
             ],
             refresh: true,
         }),

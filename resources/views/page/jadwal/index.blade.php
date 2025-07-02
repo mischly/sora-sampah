@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@push('styles')
+    @vite(['resources/css/page-css/jadwal.css'])
+@endpush
+
 @section('content')
 
 <div class="awal">
@@ -18,7 +22,7 @@
                     
                 </div>  
                 <div class="col-md-6 col-lg-5 text-end">
-                    <div class="jumbtron_img">
+                    <div class="jumbotron_img">
                       <img src="{{ asset('images/jumbotron12.jpg') }}" alt="jumbotron" width="900" width="540">
                     </div>
                 </div>

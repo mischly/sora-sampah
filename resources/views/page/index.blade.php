@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@push('styles')
+    @vite(['resources/css/page-css/landing.css'])
+@endpush
+
 @section('content')
 
 <div class="hero">

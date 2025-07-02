@@ -1,0 +1,23 @@
+/* ~ Footer - ini untuk footer */
+
+footer {
+    background-color: #004d7a;
+}
+footer ul li{
+    list-style-type: none;
+}
+.text_logo{
+    font-size: 1.1rem;
+    font-size: 24px;
+}
+.text_logo h5{
+    font-size: 28px;
+}
+.text_logo .span{
+    font-size: 24px;
+}
+.container p{
+    margin: 0;
+    padding: 0;
+}
+/* end footer */

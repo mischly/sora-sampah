@@ -1,16 +1,10 @@
-  
-    
 .bg-1{ 
-  background-color: #85D34C;  
-  transform: translateX(-50px);
-}   
+    background-color: #85D34C;  
+}
 
 .subtitle-1{  
   text-align: center; 
   justify-content: center;  
-  
-  
-  
 } 
 .piramid-text p {
     margin: 5px auto;
@@ -78,4 +72,3 @@
   column-gap: 5rem; 
   row-gap: 4rem;   
 } 
-

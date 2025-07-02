@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArtikelController;
-use App\Http\Controllers\jadwalController;
+use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\PelaporanController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Auth;
@@ -20,4 +20,4 @@ Auth::routes();
 Route::resource('pelaporan', PelaporanController::class);
 Route::resource('artikel', ArtikelController::class);
 Route::resource('profile', ProfileController::class);
-Route::resource('jadwal', jadwalController::class);
+Route::resource('jadwal', JadwalController::class);
