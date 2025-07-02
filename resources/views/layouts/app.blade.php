@@ -20,7 +20,8 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
     <link rel="stylesheet" href="{{ asset('css/pelaporan.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/artikel.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/artikel.css') }}">   
+    <link rel="stylesheet" href="{{ asset('css/jadwal.css') }}">
     
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -55,7 +56,7 @@
                             <a class="nav-link {{ request()->is('artikel') ? 'active' : '' }}" href="{{ route('artikel.index') }}">ARTIKEL</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/">JADWAL</a>
+                            <a class="nav-link" {{ request()->is('jadwal') ? 'active' : '' }}" href="{{ route('jadwal.index') }}">JADWAL</a>
                         </li>
                         @guest
                             @if (Route::has('login'))

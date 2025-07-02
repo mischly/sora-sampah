@@ -1,0 +1,81 @@
+  
+    
+.bg-1{ 
+  background-color: #85D34C;  
+  transform: translateX(-50px);
+}   
+
+.subtitle-1{  
+  text-align: center; 
+  justify-content: center;  
+  
+  
+  
+} 
+.piramid-text p {
+    margin: 5px auto;
+    text-align: center;
+    font-size: 1.25rem; /* fs-4 equivalent */
+    line-height: 1.4; 
+    transform: translateX(-50px);
+}
+
+.line-1 { width: 100%; }
+.line-2 { width: 90%; }
+.line-3 { width: 80%; }
+.line-4 { width: 70%; }
+
+.jadwal-card {
+  display: flex;
+  width: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0); 
+}
+
+.jadwal-card:hover {
+  transform: scale(1.03); 
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0);  
+  background-color: transparent;
+} 
+
+
+.hari {
+  background-color: #003B91;
+  color: white;
+  width: 200px; 
+  /* padding: 30px 20px; */
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.75rem;
+  letter-spacing: 1px;
+}
+
+.info {
+  background-color: #e1e1e1;  
+  padding: 30px 25px; 
+  width: 100%;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.lokasi {
+  font-weight: 700;
+  font-size: 2rem; 
+  color: #003B91;
+  margin-bottom: 5px;
+}
+
+.jam {
+  color: #6c757d;
+  font-size: 1.25rem; 
+}
+
+.row-1 {
+  column-gap: 5rem; 
+  row-gap: 4rem;   
+} 
+

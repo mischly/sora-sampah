@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row justify-content-center align-items-center">
             <div class="col-md-6 col-lg-5">
-                <h1 class="big-title e-bold text-04709A  "style="color: #04709A;">SBB Artikel</h1><br>
+                <h1 class="big-title e-bold text-04709A  "style="color: #04709A;">SSB Artikel</h1><br>
                 <p class="subtitle fs-3" style="color: #04709A;">Ialah wadah berbagi informasi dalam berbagai bentuk seputar isu persampahan.</p>
                 <p class="lead text-center text-md-start">
                 </p>
