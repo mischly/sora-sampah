@@ -1,17 +1,29 @@
-.bg-1{ 
-    background-color: #85D34C;  
+.hero {
+  background-size: cover;
+  background-position: center;
+  min-height: 100dvh;
 }
 
-.subtitle-1{  
-  text-align: center; 
-  justify-content: center;  
-} 
+/* Cegah halaman geser horizontal */
+body {
+  overflow-x: hidden;
+}
+
+.bg-1 {
+  background-color: #85D34C;
+}
+
+.subtitle-1 {
+  text-align: center;
+  justify-content: center;
+}
+
 .piramid-text p {
-    margin: 5px auto;
-    text-align: center;
-    font-size: 1.25rem; /* fs-4 equivalent */
-    line-height: 1.4; 
-    transform: translateX(-50px);
+  margin: 5px auto;
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  transform: translateX(-50px);
 }
 
 .line-1 { width: 100%; }
@@ -19,56 +31,99 @@
 .line-3 { width: 80%; }
 .line-4 { width: 70%; }
 
+/* ~ JADWAL PENGAMBILAN SAMPAH - Tampilan Seperti Gambar */
+
+.row-1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
 .jadwal-card {
   display: flex;
+  flex-direction: row;
   width: 100%;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0); 
+  max-width: 450px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: transparent;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .jadwal-card:hover {
-  transform: scale(1.03); 
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0);  
-  background-color: transparent;
-} 
-
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
+}
 
 .hari {
   background-color: #003B91;
   color: white;
-  width: 200px; 
-  /* padding: 30px 20px; */
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+  padding: 40px 50px;
+  min-width: 140px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 1.75rem;
-  letter-spacing: 1px;
+  font-size: 1.25rem;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  text-align: center;
 }
 
 .info {
-  background-color: #e1e1e1;  
-  padding: 30px 25px; 
-  width: 100%;
+  background-color: #e1e1e1;
+  padding: 30px 25px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
 
 .lokasi {
   font-weight: 700;
-  font-size: 2rem; 
+  font-size: 1.4rem;
   color: #003B91;
-  margin-bottom: 5px;
+  margin-bottom: 0.3rem;
 }
 
 .jam {
+  font-size: 1rem;
   color: #6c757d;
-  font-size: 1.25rem; 
 }
 
-.row-1 {
-  column-gap: 5rem; 
-  row-gap: 4rem;   
-} 
+/* Responsif untuk HP */
+@media (max-width: 576px) {
+  .jadwal-card {
+    flex-direction: column;
+    border-radius: 20px;
+    max-width: 100%;
+  }
+
+  .hari {
+    border-radius: 20px 20px 0 0;
+    padding: 20px;
+    font-size: 1.1rem;
+    min-width: 100%;
+  }
+
+  .info {
+    border-radius: 0 0 20px 20px;
+    padding: 20px;
+    text-align: center;
+  }
+}
+
+/* Responsif gambar preview Dropzone */
+#previewContainer img {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  object-fit: cover;
+}

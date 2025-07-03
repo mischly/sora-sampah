@@ -22,7 +22,7 @@
                     
                 </div>  
                 <div class="col-md-6 col-lg-5 text-end">
-                    <div class="jumbotron_img">
+                    <div class="jumbtron_img">
                       <img src="{{ asset('images/jumbotron12.jpg') }}" alt="jumbotron" width="900" width="540">
                     </div>
                 </div>
@@ -34,7 +34,7 @@
     <div class="container-1 container pb-5 ">
         <div class="row-1 row justify-content-center">
             <!-- SENIN -->
-            <div class="col-md-5 d-flex jadwal-card">
+            <div class="col-md-6 d-flex jadwal-card">
                 <div class="hari">SENIN</div>
                 <div class="info">
                     <div class="lokasi">Cimahi</div>

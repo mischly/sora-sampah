@@ -17,7 +17,7 @@ Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('pelaporan', PelaporanController::class);
+Route::resource('pelaporan', PelaporanController::class);   
 Route::resource('artikel', ArtikelController::class);
 Route::resource('profile', ProfileController::class);
 Route::resource('jadwal', JadwalController::class);
