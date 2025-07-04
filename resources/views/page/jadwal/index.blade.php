@@ -34,7 +34,7 @@
     <div class="container-1 container pb-5 ">
         <div class="row-1 row justify-content-center">
             <!-- SENIN -->
-            <div class="col-md-5 d-flex jadwal-card">
+            <div class="col-md-6 d-flex jadwal-card">
                 <div class="hari">SENIN</div>
                 <div class="info">
                     <div class="lokasi">Cimahi</div>
