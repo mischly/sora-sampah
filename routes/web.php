@@ -21,3 +21,7 @@ Route::resource('pelaporan', PelaporanController::class);
 Route::resource('artikel', ArtikelController::class);
 Route::resource('profile', ProfileController::class);
 Route::resource('jadwal', JadwalController::class);
+
+Route::get('/menu', function () {
+    return view('menu.index');
+})->name('menu.index');

@@ -14,7 +14,9 @@
                     <h1 class="big-title display-6 e-bold">WEBSITE SORA <br> SAMPAH BANDUNG</h1>
                     <p class="subtitle">Sora Sampah Bandung merupakan solusi digital teriintegrasi yang menghubungkan tiga pilar utama dalam pengelolaan sampah yang melibatkan warga, petugas kebersihan, dan pemerintah kota Bandung.</p>
                     <p class="lead text-center text-md-start">
-                        <a class="btn daftar fs-5 fw-bold" href="/register" role="button">Daftar</a>
+                        <a class="btn daftar fs-5 fw-bold @auth
+                            none
+                        @endauth" href="/register" role="button">Daftar</a>
                     </p>
                 </div>  
                 <div class="col-md-6 col-lg-5 text-end">
@@ -89,7 +91,10 @@
         <div class="subtitle-jumbotron2 text-center py-5">
             <h4>MARI BERSAMA MENJADI BAGIAN PARTISIFASI AKTIF</h4>
             <h1>SORA SAMPAH BANDUNG</h1>
-            <a href="/login" class="btn-join btn fw-bold px-4 py-2 mt-3 fs-3">Bergabunglah bersama kami !</a>
+            <a href="/login" class="btn-join btn fw-bold px-4 py-2 mt-3 fs-3 @auth none @endauth">Bergabunglah bersama kami !</a>
+            @auth
+                <a href="/lapor" class="btn-join btn fw-bold px-4 py-2 mt-3 fs-3">Laporkan Sampah Ilegal !</a>
+            @endauth
         </div>
     </div>
 </section>

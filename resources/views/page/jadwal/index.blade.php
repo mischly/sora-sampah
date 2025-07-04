@@ -22,7 +22,7 @@
                     
                 </div>  
                 <div class="col-md-6 col-lg-5 text-end">
-                    <div class="jumbotron_img">
+                    <div class="jumbtron_img">
                       <img src="{{ asset('images/jumbotron12.jpg') }}" alt="jumbotron" width="900" width="540">
                     </div>
                 </div>
@@ -81,3 +81,4 @@
             </div>
         </div>
     </div>
+@endsection

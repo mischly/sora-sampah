@@ -91,3 +91,76 @@
 }
 
 /* end navbar*/
+
+
+/* Tombol Menu */
+
+/* .nav-link.menu {
+    background: linear-gradient(135deg, rgba(27, 197, 234, 1), rgba(24, 208, 121, 1));
+    color: white;
+    padding: 6px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: .5s fade;
+}
+
+.navbar-nav .nav-link.menu:hover {
+    background: rgba(24, 208, 121, 1.000);
+    color: #fff;
+}
+
+.navbar-nav .nav-link.menu:hover::after {
+    width: 0;
+} */
+
+.nav-link.menu {
+  position: relative;
+  display: inline-block;
+  padding: 6px 16px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #fff;
+  background: linear-gradient(to right, rgba(24, 208, 121, 1.000)); /* gradasi awal */
+  border: none;
+  border-radius: 6px;
+  overflow: hidden;
+  z-index: 0;
+  transition: transform 0.25s ease;
+}
+
+/* efek klik */
+.nav-link.menu:active {
+  transform: scale(0.96);
+}
+
+/* animasi menyapu */
+.nav-link.menu::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -10%;
+  width: 120%;
+  height: 100%;
+    background: linear-gradient(135deg, rgba(27, 197, 234, 1), rgba(24, 208, 121, 1));
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+  z-index: 1;
+}
+
+/* sapuan saat hover */
+.nav-link.menu:hover::before {
+  transform: translate3d(100%, 0, 0);
+}
+
+/* pastikan teks selalu di atas lapisan animasi */
+.nav-link.menu span {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.nav-link.menu:hover {
+    color: #fff;
+}
+

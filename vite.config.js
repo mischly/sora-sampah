@@ -12,6 +12,7 @@ export default defineConfig({
                 'resources/css/page-css/artikel.css',
                 'resources/css/page-css/jadwal.css',
                 'resources/css/auth/auth.css',
+                'resources/css/petugas-css/index.css',
             ],
             refresh: true,
         }),
