@@ -19,7 +19,8 @@ class PelaporanController extends Controller
      */
     public function create()
     {
-        //
+        return view('page.pelaporan.create');
+
     }
 
     /**
