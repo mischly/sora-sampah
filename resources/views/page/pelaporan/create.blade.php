@@ -54,7 +54,7 @@
     </div>
     <div class="d-flex justify-content-center align-items-center min-vh-100 px-3 py-4">
         <div class="report-form-container p-4 pt-5">
-            <form action="{{ route('pelaporan.store') }}" method="POST">
+            <form action="{{ route('pelaporan.store') }}" method="POST" enctype="multipart/form-data" autocomplete="off">
                 @csrf
                 
                 <!-- Nama Pelapor -->
@@ -229,8 +229,16 @@
 
                 <!-- INFORMASI TAMBAHAN -->
                 <div class="mb-3">
-                    <label for="informasi_tambahan" class="form-label fw-semibold">INFORMASI TAMBAHAN (OPSIONAL)</label>
-                    <textarea class="form-control shadow-sm" id="informasi_tambahan" rows="3" placeholder="Informasi tambahan seperti frekuensi kejadian, dugaan pelaku, dll."></textarea>
+                    <label for="informasi_tambahan" class="form-label fw-semibold">INFORMASI TAMBAHAN <span class="text-danger">*</span></label>
+                    <textarea class="form-control shadow-sm @error('informasi_tambahan') is-invalid @enderror" 
+                            name="informasi_tambahan"
+                            id="informasi_tambahan" 
+                            rows="3" 
+                            placeholder="Informasi tambahan seperti frekuensi kejadian, dugaan pelaku, dll."
+                            required>{{ old('informasi_tambahan') }}</textarea>
+                    @error('informasi_tambahan')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
 
                 <button type="submit" class="btn btn-primary w-100 fw-semibold rounded-pill py-3">

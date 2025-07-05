@@ -54,14 +54,15 @@ input.search:focus {
 
 /* Baris data */
 .table-custom tbody tr {
-    background-color: #5D7731; /* hijau olive gelap */
+    background-color: #5D7731;
     color: white;
+    border: 1px solid #ccc;
 }
 
 /* Sel data */
 .table-custom tbody td {
     padding: 12px 10px;
-    border: 1px solid #4a6328;
+    border: 1px solid #ccc;
     text-align: center;
 }
 
@@ -85,7 +86,7 @@ h4.fw-bold {
     font-size: 24px;
 }
 
-.container .btn {
+.container #btnLaporSampah {
     background-color: #71BF3F;
     color: white;
     font-family: 'Poppins'; 
@@ -96,6 +97,42 @@ h4.fw-bold {
     transition: background-color 0.3s ease;
 }
 
-.container .btn :hover {
+.container #btnLaporSampah :hover {
     background-color: #5D7731;
+}
+
+
+/* Pagination */
+
+.pagination-custom {
+    display: flex;
+    gap: 6px;
+    list-style: none;
+    justify-content: center;
+    padding-left: 0;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+.pagination-custom li a,
+.pagination-custom li span {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #333;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all .2s;
+    text-decoration: none;
+}
+.pagination-custom li.active span,
+.pagination-custom li a:hover {
+    background-color: #198754;
+    color: #fff;
+    border-color: #198754;
+}
+.pagination-custom li.disabled span {
+    background-color: #f3f3f3;
+    color: #aaa;
+    pointer-events: none;
 }

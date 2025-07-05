@@ -42,15 +42,12 @@
 </script>
 @endpush
 
-
 @section('content') 
 
 <div class="jumbotron-wrapper">
-    <!-- Gambar -->
     <img src="{{ asset('images/jumbotron4.jpg') }}" alt="recycle" class="img-fluid w-100 jumbotron-image">
 </div>
 
-<!-- Blok hijau di bawah gambar -->
 <div class="jumbotron-overlay text-center text-white px-4 py-5">
     <h1 class="fw-bold">Pelaporan Sampah ilegal</h1>
     <p class="fs-5">
@@ -66,42 +63,68 @@
             <a href="{{ auth()->check() ? route('pelaporan.create') : 'javascript:void(0)' }}"
                 class="btn btn-success rounded-pill px-5 py-3"
                 id="btnLaporSampah">+ Lapor sampah</a>
-            <input type="text"  placeholder="Cari..." class="search pelaporan">
+            <form method="GET" class="d-flex align-items-center gap-2" autocomplete="off">
+                <input  type="text"
+                        name="q"
+                        value="{{ $search ?? '' }}"
+                        class="form-control form-control-sm search pelaporan"
+                        placeholder="Cari laporan…">
+                <button class="btn btn-outline-secondary btn-sm">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
         </div>
 
         <div class="table-responsive">
             <table class="table-custom">
                 <thead>
                     <tr>
-                        <th>NO</th>
+                        <th style="width: 60px">NO</th>
                         <th>LAPORAN</th>
                         <th>LOKASI</th>
                         <th>TANGGAL</th>
-                        <th>PELAPOR</th>    
-                        <th>AKSI</th>
+                        <th>PELAPOR</th>
+                        {{-- <th>STATUS</th> --}}
+                        <th style="width: 100px">AKSI</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {{-- Data akan di-loop di sini --}}
-                    {{-- @foreach () --}}
+                     @forelse($pelaporans as $i => $p)
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>{{ $i + 1 }}</td>
+                            <td>{{ Str::limit($p->informasi_tambahan, 60) }}</td>
+                            <td>{{ $p->lokasi_kejadian }}</td>
+                            <td>{{ \Carbon\Carbon::parse($p->created_at)->format('d M Y') }}</td>
+                            <td>{{ $p->nama_pelapor }}</td>
+
+                            {{-- STATUS — aktifkan nanti setelah ada relasi petugas
                             <td>
-                                <div class="btn-group btn-group-sm" role="group">
-                                    {{-- <a href="{{ route('pelaporan.show') }}" tambahkan , $p->id untuk mengidentifikasi id --}}
-                                        {{-- class="btn btn-outline-info" title="Detail"> --}}
-                                        <i class="fas fa-eye"></i> Detail
-                                    {{-- </a>  --}}
+                                @if($p->status == 'selesai')
+                                    <span class="badge bg-success">Selesai</span>
+                                @else
+                                    <span class="badge bg-warning text-dark">Belum diproses</span>
+                                @endif
+                            </td>
+                            --}}
+
+                            <td>
+                                <div class="btn-group btn-group-sm">
+                                    <a href="{{ route('pelaporan.show', $p->id) }}" class="btn btn-white btn-outline-light" title="Detail">Detail 
+                                        <i class="fas fa-eye"></i>
+                                    </a>
                                 </div>
                             </td>
-                                </tr>
-                    {{-- @endforeach --}}
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="6" class="text-center text-white py-4">Belum ada laporan masuk.</td>
+                        </tr>
+                    @endforelse
                 </tbody>
             </table>
+        </div>
+        <div class="d-flex justify-content-center mt-4">
+            {{ $pelaporans->links('vendor.pagination.custom') }}
         </div>
     </div>
 </section>      
