@@ -1,7 +1,45 @@
 @extends('layouts.app')
+
 @push('styles')
-    @vite(['resources/css/page-css/form_prlaporan.css'])
+    @vite(['resources/css/page-css/form_pelaporan.css'])
 @endpush
+
+@push('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const uploadBox = document.getElementById('uploadBox');
+        const fileInput = document.getElementById('fotoBukti');
+        const previewContainer = document.getElementById('previewContainer');
+        const placeholderContent = document.getElementById('placeholderContent');
+
+        uploadBox.addEventListener('click', () => fileInput.click());
+
+        fileInput.addEventListener('change', function () {
+            const file = this.files[0];
+            previewContainer.innerHTML = '';
+
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = e => {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.className = 'preview-image';
+                    previewContainer.appendChild(img);
+
+                    // Toggle visibility
+                    placeholderContent.classList.add('d-none');
+                    previewContainer.classList.remove('d-none');
+                };
+                reader.readAsDataURL(file);
+            } else {
+                placeholderContent.classList.remove('d-none');
+                previewContainer.classList.add('d-none');
+            }
+        });
+    });
+</script>
+@endpush
+
 @section('content')     
 
 <div class="hero pt-5"> 
@@ -16,165 +54,183 @@
     </div>
     <div class="d-flex justify-content-center align-items-center min-vh-100 px-3 py-4">
         <div class="report-form-container p-4 pt-5">
-            <form id="reportForm" novalidate>
+            <form action="{{ route('pelaporan.store') }}" method="POST">
+                @csrf
+                
+                <!-- Nama Pelapor -->
                 <div class="mb-3">
-                    <label for="namaPelapor" class="form-label fw-semibold">NAMA PELAPOR <span class="text-danger">*</span></label>
+                    <label for="nama_pelapor" class="form-label fw-semibold">NAMA PELAPOR <span class="text-danger">*</span></label>
                     <div class="input-group shadow-sm">
-                        <input type="text" class="form-control border-end-0" id="namaPelapor"
-                          placeholder="Masukkan Nama Lengkap Anda" required />
+                        <input type="text" 
+                            class="form-control border-end-0 @error('nama_pelapor') is-invalid @enderror" 
+                            name="nama_pelapor" 
+                            id="nama_pelapor" 
+                            value="{{ old('nama_pelapor') }}" 
+                            placeholder="Masukkan nama lengkap anda"
+                            required
+                            autofocus>
                         <span class="input-group-text bg-white border-start-0">
-                          <i class="bi bi-person-fill text-muted"></i>
+                            <i class="bi bi-person-fill text-muted"></i>
                         </span>
-                      </div>    
+                        @error('nama_pelapor')
+                            <small class="text-danger">{{ $message }}</small>
+                        @enderror
+                    </div>
                 </div>
-                      
 
+                <!-- No Telpon -->
                 <div class="mb-3">
-                    <label for="nomorTelepon" class="form-label fw-semibold">NOMOR TELEPON <span class="text-danger">*</span></label>
-                    <div class="input-group shadow-sm">       
-                        <input type="text" class="form-control border-end-0" id="nomorTelepon"    
-                         placeholder="08xxxxxxxxxx" required />
+                    <label for="no_telpon" class="form-label fw-semibold">NOMOR TELEPON <span class="text-danger">*</span></label>
+                    <div class="input-group shadow-sm">
+                        <input type="text" 
+                            class="form-control border-end-0 @error('no_telpon') is-invalid @enderror" 
+                            name="no_telpon" 
+                            id="no_telpon" 
+                            value="{{ old('no_telpon') }}" 
+                            placeholder="Masukan no telepon anda"
+                            required
+                            autofocus>
                         <span class="input-group-text bg-white border-start-0">
                             <i class="bi bi-telephone-fill text-muted"></i>
                         </span>
+                        @error('no_telpon')
+                            <small class="text-danger">{{ $message }}</small>
+                        @enderror
                     </div>
                 </div>
 
+                <!-- Email -->
                 <div class="mb-3">
                     <label for="email" class="form-label fw-semibold">EMAIL <span class="text-danger">*</span></label>
                     <div class="input-group shadow-sm">
-                       
-                        <input type="email" class="form-control border-end-0" id="email"    
-                         placeholder="email@gmail.com" required /> 
-                        <span class="input-group-text bg-white border-start-0 ">
+                        <input type="email" 
+                            class="form-control border-end-0 @error('email') is-invalid @enderror" 
+                            name="email" 
+                            id="email" 
+                            value="{{ old('email') }}" 
+                            placeholder="Masukan email aktif anda"
+                            required
+                            autofocus>
+                        <span class="input-group-text bg-white border-start-0">
                             <i class="bi bi-envelope-fill text-muted"></i>
                         </span>
+                        @error('email')
+                            <small class="text-danger">{{ $message }}</small>
+                        @enderror
+                    </div>
+                </div>
+
+                <!-- LOKASI KEJADIAN -->
+                <div class="mb-3">
+                    <label for="lokasi_kejadian" class="form-label fw-semibold">LOKASI KEJADIAN <span class="text-danger">*</span></label>
+                    <div class="input-group shadow-sm">
+                        <input type="text" 
+                            class="form-control border-end-0 @error('lokasi_kejadian') is-invalid @enderror" 
+                            name="lokasi_kejadian" 
+                            id="lokasi_kejadian" 
+                            value="{{ old('lokasi_kejadian') }}" 
+                            placeholder="Contoh: Jl. Sudirman No. 123, Bandung Wetan"
+                            required
+                            autofocus>
+                        <span class="input-group-text bg-white border-start-0">
+                            <i class="bi bi-geo-alt-fill text-muted"></i>
+                        </span>
+                        @error('lokasi_kejadian')
+                            <small class="text-danger">{{ $message }}</small>
+                        @enderror
+                    </div>
+                </div>
+
+                <!-- KECAMATAN   -->
+                <div class="mb-3">
+                    <label for="kecamatan" class="form-label fw-semibold">KECAMATAN <span class="text-danger">*</span></label>
+                    <div class="input-group shadow-sm">
+                    <select class="form-select shadow-sm @error('kecamatan') is-invalid @enderror" name="kecamatan" id="kecamatan" required>
+                        <option value="" disabled selected>Pilih Kecamatan</option>
+                        <option value="andir" {{ old('kecamatan') == 'andir' ? 'selected' : '' }}>Andir</option>
+                        <option value="antapani" {{ old('kecamatan') == 'antapani' ? 'selected' : '' }}>Antapani</option>
+                        <option value="arcamanik" {{ old('kecamatan') == 'arcamanik' ? 'selected' : '' }}>Arcamanik</option>
+                        <option value="astanaanyar" {{ old('kecamatan') == 'astanaanyar' ? 'selected' : '' }}>Astanaanyar</option>
+                        <option value="babakan_ciparay" {{ old('kecamatan') == 'babakan_ciparay' ? 'selected' : '' }}>Babakan Ciparay</option>
+                        <option value="bandung_kidul" {{ old('kecamatan') == 'bandung_kidul' ? 'selected' : '' }}>Bandung Kidul</option>
+                        <option value="bandung_kulon" {{ old('kecamatan') == 'bandung_kulon' ? 'selected' : '' }}>Bandung Kulon</option>
+                        <option value="bandung_wetan" {{ old('kecamatan') == 'bandung_wetan' ? 'selected' : '' }}>Bandung Wetan</option>
+                        <option value="batununggal" {{ old('kecamatan') == 'batununggal' ? 'selected' : '' }}>Batununggal</option>
+                        <option value="bojongloa_kaler" {{ old('kecamatan') == 'bojongloa_kaler' ? 'selected' : '' }}>Bojongloa Kaler</option>
+                        <option value="bojongloa_kidul" {{ old('kecamatan') == 'bojongloa_kidul' ? 'selected' : '' }}>Bojongloa Kidul</option>
+                        <option value="buah_batu" {{ old('kecamatan') == 'buah_batu' ? 'selected' : '' }}>Buah Batu</option>
+                        <option value="cibeunying_kaler" {{ old('kecamatan') == 'cibeunying_kaler' ? 'selected' : '' }}>Cibeunying Kaler</option>
+                        <option value="cibeunying_kidul" {{ old('kecamatan') == 'cibeunying_kidul' ? 'selected' : '' }}>Cibeunying Kidul</option>
+                        <option value="cibiru" {{ old('kecamatan') == 'cibiru' ? 'selected' : '' }}>Cibiru</option>
+                        <option value="cicendo" {{ old('kecamatan') == 'cicendo' ? 'selected' : '' }}>Cicendo</option>
+                        <option value="cidadap" {{ old('kecamatan') == 'cidadap' ? 'selected' : '' }}>Cidadap</option>
+                        <option value="cinambo" {{ old('kecamatan') == 'cinambo' ? 'selected' : '' }}>Cinambo</option>
+                        <option value="coblong" {{ old('kecamatan') == 'coblong' ? 'selected' : '' }}>Coblong</option>
+                        <option value="gedebage" {{ old('kecamatan') == 'gedebage' ? 'selected' : '' }}>Gedebage</option>
+                        <option value="kiaracondong" {{ old('kecamatan') == 'kiaracondong' ? 'selected' : '' }}>Kiaracondong</option>
+                        <option value="lengkong" {{ old('kecamatan') == 'lengkong' ? 'selected' : '' }}>Lengkong</option>
+                        <option value="mandalajati" {{ old('kecamatan') == 'mandalajati' ? 'selected' : '' }}>Mandalajati</option>
+                        <option value="panyileukan" {{ old('kecamatan') == 'panyileukan' ? 'selected' : '' }}>Panyileukan</option>
+                        <option value="rancasari" {{ old('kecamatan') == 'rancasari' ? 'selected' : '' }}>Rancasari</option>
+                        <option value="regol" {{ old('kecamatan') == 'regol' ? 'selected' : '' }}>Regol</option>
+                        <option value="sukajadi" {{ old('kecamatan') == 'sukajadi' ? 'selected' : '' }}>Sukajadi</option>
+                        <option value="sukasari" {{ old('kecamatan') == 'sukasari' ? 'selected' : '' }}>Sukasari</option>
+                        <option value="sumur_bandung" {{ old('kecamatan') == 'sumur_bandung' ? 'selected' : '' }}>Sumur Bandung</option>
+                        <option value="ujungberung" {{ old('kecamatan') == 'ujungberung' ? 'selected' : '' }}>Ujungberung</option>
+                    </select>
+                    @error('kecamatan')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
+                </div>
+
+                <!-- JENIS SAMPAH   -->
+                <div class="my-3">
+                    <label for="jenis_sampah" class="form-label fw-semibold">JENIS SAMPAH <span class="text-danger">*</span></label>
+                    <select class="form-select shadow-sm @error('jenis_sampah') is-invalid @enderror" name="jenis_sampah" id="jenis_sampah" required>
+                        <option value="" disabled selected>Pilih Jenis Sampah</option>
+                        <option value="organik" {{ old('jenis_sampah') == 'organik' ? 'selected' : '' }}>Sampah Organik</option>
+                        <option value="anorganik" {{ old('jenis_sampah') == 'anorganik' ? 'selected' : '' }}>Sampah Anorganik</option>
+                        <option value="b3" {{ old('jenis_sampah') == 'b3' ? 'selected' : '' }}>Sampah B3 (Bahan Berbahaya dan Beracun) </option>
+                    </select>
+                        @error('jenis_sampah')
+                            <small class="text-danger">{{ $message }}</small>
+                        @enderror
                     </div>
                 </div>
 
                 <div class="mb-3">
-                    <label for="lokasiKejadian" class="form-label fw-semibold">LOKASI KEJADIAN <span class="text-danger">*</span></label>
-                        <div class="input-group shadow-sm">
-                        
-                            <input type="text" class="form-control  border-start-0" id="lokasiKejadian"     
-                            placeholder="Contoh: Jl. Sudirman No. 123, Bandung Wetan" required />   
-                            <span class="input-group-text bg-white border-start-0">
-                                <i class="bi bi-geo-alt-fill text-muted"></i>
-                            </span>
-                        </div>
-                </div>
-
-                <div class="mb-3">
-                    <label for="kecamatan" class="form-label fw-semibold">KECAMATAN <span class="text-danger">*</span></label>
-                    <select class="form-select shadow-sm" id="kecamatan" required>
-                        <option value="" disabled selected>Pilih Kecamatan</option>
-                        <option value="bandung-wetan">Bandung Wetan</option>
-                        <option value="coblong">Coblong</option>
-                        <option value="lengkong">Lengkong</option>
-                        <option value="sumur-bandung">Sumur Bandung</option>
-                        <option value="sukajadi">Sukajadi</option>
-                        <option value="cidadap">Cidadap</option>
-                        <option value="cicendo">Cicendo</option>
-                        <option value="sukasari">Sukasari</option>
-                    </select>
-                </div>
-
-                <div class="mb-3">
-                    <label for="tanggalWaktu" class="form-label fw-semibold">TANGGAL & WAKTU <span class="text-danger">*</span></label>
-                    <input type="datetime-local" class="form-control shadow-sm rounded-pill" id="tanggalWaktu" required />
-                </div>
-
-                <div class="mb-3">
-                    <label for="jenisSampah" class="form-label fw-semibold">JENIS SAMPAH <span class="text-danger">*</span></label>
-                    <select class="form-select shadow-sm" id="jenisSampah" required>
-                        <option value="" disabled selected>Pilih Jenis Sampah</option>
-                        <option value="organik">Sampah Organik</option>
-                        <option value="plastik">Sampah Plastik</option>
-                        <option value="elektronik">Sampah Elektronik</option>
-                        <option value="kertas">Sampah Kertas</option>
-                        <option value="b3">Sampah B3 (Bahan Berbahaya dan Beracun)</option>
-                        <option value="kaca">Sampah Kaca</option>
-                        <option value="logam">Sampah Logam</option>
-                        <option value="tekstil">Sampah Tekstil</option>
-                    </select>
-                </div>
-
-                <div class="mb-3">
-                    <label for="deskripsiKejadian" class="form-label fw-semibold">DESKRIPSI KEJADIAN <span class="text-danger">*</span></label>
-                    <textarea class="form-control shadow-sm" id="deskripsiKejadian" rows="4" placeholder="Jelaskan secara detail kondisi sampah, perkiraan volume, dampak yang ditimbulkan, dan informasi penting lainnya.." required></textarea>
-                </div>  
-
-                <div class="mb-4">
                     <label for="fotoBukti" class="form-label fw-semibold">
                         FOTO BUKTI <span class="text-danger">*</span>
                     </label>
-                
-                    <div class="dropzone border rounded-3 d-flex flex-column justify-content-center align-items-center px-3 py-4 text-center text-secondary shadow-sm"
-                        id="dropzone" tabindex="0" role="button">
-                
-                        <!-- Ikon Upload -->
-                        <i id="iconUpload" class="bi bi-upload" style="font-size: 2rem;"></i>
-                
-                        <!-- Placeholder -->
-                        <span id="fotoPlaceholder" class="mt-2 fw-semibold">Klik atau seret foto ke sini</span>
-                        <small id="formatInfo" class="text-muted mb-2">Format: JPG, PNG, WebP (Maks 5MB per file)</small>
-                
-                        <!-- Preview Gambar -->
-                        <div id="previewContainer" class="d-flex flex-wrap justify-content-center gap-2 mt-2"></div>
-                
-                        <!-- Input File (disembunyikan) -->
-                        <input type="file" accept=".jpg,.jpeg,.png,.webp" multiple class="d-none" id="fotoBukti" required />
+
+                    <!-- Container Upload -->
+                    <div class="upload-box shadow-sm" id="uploadBox" role="button" tabindex="0">
+                        <div id="placeholderContent" class="text-center text-secondary">
+                            <i class="bi bi-image" style="font-size: 2rem;"></i>
+                            <p class="mb-0 mt-2 fw-semibold">Pilih foto di sini</p>
+                            <small class="text-muted">Format: JPG, PNG, WebP (Maks 5MB per file)</small>
+                        </div>
+                        <div id="previewContainer" class="preview-container d-none"></div>
                     </div>
+
+                    <!-- Input file -->
+                    <input type="file"
+                        name="foto_bukti"
+                        id="fotoBukti"
+                        accept=".jpg,.jpeg,.png,.webp"
+                        class="d-none @error('foto_bukti') is-invalid @enderror"
+                        required>
+
+                    @error('foto_bukti')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
-                
-                <!-- Script -->
-                <script>
-                    const dropzone = document.getElementById("dropzone");
-                    const inputFoto = document.getElementById("fotoBukti");
-                    const previewContainer = document.getElementById("previewContainer");
-                    const placeholderText = document.getElementById("fotoPlaceholder");
-                    const formatInfo = document.getElementById("formatInfo");
-                    const iconUpload = document.getElementById("iconUpload");
-                
-                    // Trigger input saat dropzone diklik
-                    dropzone.addEventListener("click", function () {
-                        inputFoto.click();
-                    });
-                
-                    // Preview gambar dan sembunyikan elemen-elemen placeholder
-                    inputFoto.addEventListener("change", function (e) {
-                        previewContainer.innerHTML = ""; // Bersihkan preview sebelumnya
-                
-                        if (e.target.files.length > 0) {
-                            iconUpload.style.display = "none";
-                            placeholderText.style.display = "none";
-                            formatInfo.style.display = "none";
-                        }
-                
-                        Array.from(e.target.files).forEach(file => {
-                            if (file.type.startsWith("image/")) {
-                                const reader = new FileReader();
-                                reader.onload = function (event) {
-                                    const img = document.createElement("img");
-                                    img.src = event.target.result;
-                                    img.classList.add("img-thumbnail");
-                                    img.style.width = "1100px";              // Lebar penuh sesuai dropzone
-                                    img.style.height = "400px";             // Tinggi penuh sesuai dropzone
-                                    img.style.objectFit = "cover";         // Supaya gambar tetap proporsional dan menutup
-                                    img.style.borderRadius = "12px";       // Radius sesuai dropzone (opsional)
-                                    img.style.boxShadow = "0 0 8px rgba(0,0,0,0.1)"; 
-                                    previewContainer.appendChild(img);
-                                };
-                                reader.readAsDataURL(file);
-                            }
-                        });
-                    });
-                </script>
 
 
-                <div class="mb-4">
-                    <label for="informasiTambahan" class="form-label fw-semibold">INFORMASI TAMBAHAN (OPSIONAL)</label>
-                    <textarea class="form-control shadow-sm" id="informasiTambahan" rows="3" placeholder="Informasi tambahan seperti frekuensi kejadian, dugaan pelaku, dll."></textarea>
+                <!-- INFORMASI TAMBAHAN -->
+                <div class="mb-3">
+                    <label for="informasi_tambahan" class="form-label fw-semibold">INFORMASI TAMBAHAN (OPSIONAL)</label>
+                    <textarea class="form-control shadow-sm" id="informasi_tambahan" rows="3" placeholder="Informasi tambahan seperti frekuensi kejadian, dugaan pelaku, dll."></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary w-100 fw-semibold rounded-pill py-3">

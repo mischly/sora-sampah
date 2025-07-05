@@ -11,7 +11,7 @@
         <div>
             <div class="bg-1 row justify-content-center align-items-center" >
                 <div class="col-md-6 col-lg-5 ">
-                    <h1 class="big-title display-6 e-bold text-white fs-1">Jadwal Pengambilan Sampah</h1> 
+                    <h1 class="big-title e-bold text-white fs-1">Jadwal Pengambilan Sampah</h1> 
                     <br>
                     <div class="piramid-text text-white">
                         <p class="line-1">Ialah data tentang penjadwalan pengambilan</p>
@@ -32,9 +32,9 @@
 </div>
 
     <div class="container-1 container pb-5 ">
-        <div class="row-1 row justify-content-center">
+        <div class="row-1 row justify-content-center py-5">
             <!-- SENIN -->
-            <div class="col-md-6 d-flex jadwal-card">
+            <div class="col-md-5 d-flex">
                 <div class="hari">SENIN</div>
                 <div class="info">
                     <div class="lokasi">Cimahi</div>
@@ -43,7 +43,7 @@
             </div>
 
             <!-- SELASA -->
-            <div class="col-md-5 d-flex jadwal-card">
+            <div class="col-md-5 d-flex">
                 <div class="hari">SELASA</div>
                 <div class="info">
                     <div class="lokasi">Sumedang</div>
@@ -52,7 +52,7 @@
             </div> 
 
             <!-- RABU -->
-            <div class="col-md-5 d-flex jadwal-card">
+            <div class="col-md-5 d-flex">
                 <div class="hari">RABU</div>
                 <div class="info">
                     <div class="lokasi">Jatinangor</div>
@@ -61,7 +61,7 @@
             </div>
 
             <!-- KAMIS -->
-            <div class="col-md-5 d-flex jadwal-card">
+            <div class="col-md-5 d-flex">
                 <div class="hari">KAMIS</div>
                 <div class="info">
                     <div class="lokasi">Pasirkodja</div>

@@ -11,6 +11,7 @@ export default defineConfig({
                 'resources/css/page-css/pelaporan.css',
                 'resources/css/page-css/artikel.css',
                 'resources/css/page-css/jadwal.css',
+                'resources/css/page-css/form-pelaporan.css',
                 'resources/css/auth/auth.css',
                 'resources/css/petugas-css/index.css',
             ],
