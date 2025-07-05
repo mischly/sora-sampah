@@ -38,11 +38,47 @@
                 });
             }
         });
+
+        // === AJAX pagination & search ===
+        const tableContainer = document.getElementById('tableContainer');
+
+        tableContainer.addEventListener('click', function (e) {
+            const target = e.target.closest('a');
+            if (target && target.closest('.pagination-custom')) {
+                e.preventDefault();
+                const url = target.getAttribute('href');
+
+                fetch(url, {
+                    headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                })
+                .then(res => res.text())
+                .then(html => {
+                    tableContainer.innerHTML = html;
+                })
+                .catch(err => console.error(err));
+            }
+        });
+
+        const searchForm = document.querySelector('form[method="GET"]');
+        searchForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const query = this.querySelector('input[name="q"]').value;
+            const url = `{{ route('pelaporan.index') }}?q=${encodeURIComponent(query)}`;
+
+            fetch(url, {
+                headers: { 'X-Requested-With': 'XMLHttpRequest' }
+            })
+            .then(res => res.text())
+            .then(html => {
+                tableContainer.innerHTML = html;
+            })
+            .catch(err => console.error(err));
+        });
     });
 </script>
 @endpush
 
-@section('content') 
+@section('content')
 
 <div class="jumbotron-wrapper">
     <img src="{{ asset('images/jumbotron4.jpg') }}" alt="recycle" class="img-fluid w-100 jumbotron-image">
@@ -54,7 +90,7 @@
         ialah laporan mengenai laporan pembuangan sampah ilegal <br>
         atau tercecer diluar fasilitas tempat sampah
     </p>
-</div>  
+</div>
 
 <section class="py-5">
     <div class="container my-4">
@@ -64,69 +100,21 @@
                 class="btn btn-success rounded-pill px-5 py-3"
                 id="btnLaporSampah">+ Lapor sampah</a>
             <form method="GET" class="d-flex align-items-center gap-2" autocomplete="off">
-                <input  type="text"
-                        name="q"
-                        value="{{ $search ?? '' }}"
-                        class="form-control form-control-sm search pelaporan"
-                        placeholder="Cari laporan…">
+                <input type="text"
+                       name="q"
+                       value="{{ $search ?? '' }}"
+                       class="form-control form-control-sm search pelaporan"
+                       placeholder="Cari laporan…">
                 <button class="btn btn-outline-secondary btn-sm">
                     <i class="fas fa-search"></i>
                 </button>
             </form>
         </div>
 
-        <div class="table-responsive">
-            <table class="table-custom">
-                <thead>
-                    <tr>
-                        <th style="width: 60px">NO</th>
-                        <th>LAPORAN</th>
-                        <th>LOKASI</th>
-                        <th>TANGGAL</th>
-                        <th>PELAPOR</th>
-                        {{-- <th>STATUS</th> --}}
-                        <th style="width: 100px">AKSI</th>
-                    </tr>
-                </thead>
-                <tbody>
-                     @forelse($pelaporans as $i => $p)
-                        <tr>
-                            <td>{{ $i + 1 }}</td>
-                            <td>{{ Str::limit($p->informasi_tambahan, 60) }}</td>
-                            <td>{{ $p->lokasi_kejadian }}</td>
-                            <td>{{ \Carbon\Carbon::parse($p->created_at)->format('d M Y') }}</td>
-                            <td>{{ $p->nama_pelapor }}</td>
-
-                            {{-- STATUS — aktifkan nanti setelah ada relasi petugas
-                            <td>
-                                @if($p->status == 'selesai')
-                                    <span class="badge bg-success">Selesai</span>
-                                @else
-                                    <span class="badge bg-warning text-dark">Belum diproses</span>
-                                @endif
-                            </td>
-                            --}}
-
-                            <td>
-                                <div class="btn-group btn-group-sm">
-                                    <a href="{{ route('pelaporan.show', $p->id) }}" class="btn btn-white btn-outline-light" title="Detail">Detail 
-                                        <i class="fas fa-eye"></i>
-                                    </a>
-                                </div>
-                            </td>
-                        </tr>
-                    @empty
-                        <tr>
-                            <td colspan="6" class="text-center text-white py-4">Belum ada laporan masuk.</td>
-                        </tr>
-                    @endforelse
-                </tbody>
-            </table>
-        </div>
-        <div class="d-flex justify-content-center mt-4">
-            {{ $pelaporans->links('vendor.pagination.custom') }}
+        <div class="table-responsive" id="tableContainer">
+            @include('page.pelaporan._table')
         </div>
     </div>
-</section>      
+</section>
 
 @endsection

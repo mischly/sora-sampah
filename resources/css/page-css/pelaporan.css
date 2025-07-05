@@ -20,15 +20,12 @@ input.search:focus {
     background-color: #71BF3F; 
     border-radius: 200px 0 0 200px;
     font-family: 'Poppins'; 
-    /* padding: 10px 10px; */
-    /* margin-top: -5px;    */
     margin-left: 200px;
     color: white;
 }
 /* Container tabel */
 .table-responsive {
     margin-top: 20px;
-    border: 2px solid #5D7731;
     overflow: hidden;
 }
 

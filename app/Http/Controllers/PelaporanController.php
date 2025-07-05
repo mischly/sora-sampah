@@ -22,7 +22,11 @@ class PelaporanController extends Controller
             })
             ->latest()
             ->paginate(10)                        
-            ->withQueryString();                  
+            ->withQueryString();     
+            
+        if ($request->ajax()) {
+            return view('page.pelaporan._table', compact('pelaporans', 'search'))->render();
+        }
 
         return view('page.pelaporan.index', compact('pelaporans', 'search'));
     }
