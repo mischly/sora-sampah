@@ -83,18 +83,21 @@ h4.fw-bold {
     font-size: 24px;
 }
 
-.container #btnLaporSampah {
+#btnLaporSampah {
     background-color: #71BF3F;
     color: white;
-    font-family: 'Poppins'; 
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-family: 'Poppins';
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 50px;
     border: none;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     transition: background-color 0.3s ease;
+    height: 100%;
 }
 
-.container #btnLaporSampah :hover {
+.container #btnLaporSampah:hover {
     background-color: #5D7731;
 }
 
@@ -132,4 +135,50 @@ h4.fw-bold {
     background-color: #f3f3f3;
     color: #aaa;
     pointer-events: none;
+}
+
+/* Search Input */
+
+/* Search input */
+input.search.pelaporan[type="text"] {
+    background-color: #71BF3F;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    border-radius: 50px;
+    font-family: 'Poppins';
+    font-size: 0.95rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+input.search.pelaporan[type="text"]::placeholder {
+    color: #ffffffc0;
+    font-weight: 400;
+}
+
+input.search.pelaporan[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(113, 191, 63, 0.3);
+}
+
+/* Tombol pencarian */
+form.d-flex .btn-outline-secondary.btn-sm {
+    border-radius: 50px;
+    padding: 8px 14px;
+    background-color: #ffffff;
+    border: 1px solid #71BF3F;
+    color: #71BF3F;
+    transition: all 0.3s ease;
+    font-family: 'Poppins';
+}
+
+form.d-flex .btn-outline-secondary.btn-sm:hover {
+    background-color: #71BF3F;
+    color: white;
+    border-color: #5D7731;
+}
+
+form.d-flex .btn-outline-secondary.btn-sm:hover i {
+    color: white;
 }

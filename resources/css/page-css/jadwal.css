@@ -49,13 +49,7 @@ body {
   border-radius: 20px;
   overflow: hidden;
   background-color: transparent;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.jadwal-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
 }
 
 .hari {
