@@ -1,0 +1,64 @@
+.detail-header{
+    font-family:'Poppins';
+    padding-top: 8rem;
+}
+
+.info-card{
+    background:#F6FFF2
+}
+
+.progress-tracking{
+    display:flex;
+    gap:8px;
+    margin-top:6px
+}
+.progress-tracking .step{
+    flex:1;
+    padding:6px 0;
+    font-size:.85rem;
+    text-align:center;
+    border-radius:20px;
+    background:#e9ecef;
+    color:#777;
+    transition:.2s
+}
+.progress-tracking .step.active{
+    background:#71BF3F;
+    color:#fff;
+    font-weight:600
+}
+
+.desc-box{
+    background:#fff;
+    border:1px solid #e0e0e0;
+    border-radius:10px;
+    padding:12px;
+    font-size:.9rem
+}
+
+.img-fluid{
+    object-fit:cover;
+    max-height:420px
+}
+
+.shadow-sm{
+    box-shadow:0 4px 12px rgba(0,0,0,.08)
+}
+
+.info-card {
+    background: #F6FFF2;
+}
+
+.btn-kembali {
+    width: 100%;
+    padding: 10px 0;
+    font-family: 'Poppins';
+    font-size: 0.95rem;
+    display: block;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.btn-kembali i {
+    margin-right: 5px;
+}
