@@ -1,0 +1,180 @@
+section {
+    margin-top: 2.2rem;
+}
+
+.tabel-l {
+    margin-top: 6rem;
+    margin-bottom: 5rem;
+}
+
+.jumbotron-custom {
+    background-image: url('../images/jumbotron3.png');
+    background-size: cover;
+    background-position: center;
+    height: 270px;
+}
+
+.jumbotron-custom .overlay {
+    background-color: rgba(224, 224, 224, 0.4);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jumbotron-custom h1 {
+    color: #00408a;
+    font-size: 2rem;
+    font-family: sans-serif;
+    font-weight: bolder;
+}
+
+/* Tabel */
+
+input.search::placeholder {
+    color: #fff;
+}
+
+input.search:focus {
+    outline: none;
+}
+
+/* Container tabel */
+.table-responsive {
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+/* Tabel utama */
+.table-custom {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Header tabel */
+.table-custom thead {
+    background-color: #5D7731;
+    color: white;
+    font-weight: bold;
+}
+
+/* Sel header */
+.table-custom thead th {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+/* Baris data */
+.table-custom tbody tr {
+    background-color: #d9d9d9;
+    color: #000;
+    border: 1px solid #ccc;
+}
+
+/* Sel data */
+.table-custom tbody td {
+    padding: 12px 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+/* Lebarkan kolom laporan */
+.table-custom tbody td:nth-child(2) {
+    text-align: left;
+    padding-left: 15px;
+}
+
+input.pelaporan[type="text"] {
+    background-color: #71BF3F;
+    padding: 10px 15px; 
+    border:none; 
+    color:white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Pagination */
+
+.pagination-custom {
+    display: flex;
+    gap: 6px;
+    list-style: none;
+    justify-content: center;
+    padding-left: 0;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+.pagination-custom li a,
+.pagination-custom li span {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #333;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all .2s;
+    text-decoration: none;
+}
+.pagination-custom li.active span,
+.pagination-custom li a:hover {
+    background-color: #198754;
+    color: #fff;
+    border-color: #198754;
+}
+.pagination-custom li.disabled span {
+    background-color: #f3f3f3;
+    color: #aaa;
+    pointer-events: none;
+}
+
+/* Search input */
+input.search.pelaporan[type="text"] {
+    background-color: #71BF3F;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    border-radius: 50px;
+    font-family: 'Poppins';
+    font-size: 0.95rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+input.search.pelaporan[type="text"]::placeholder {
+    color: #ffffffc0;
+    font-weight: 400;
+}
+
+input.search.pelaporan[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(113, 191, 63, 0.3);
+}
+
+/* Tombol pencarian */
+form.d-flex .btn-outline-secondary.btn-sm {
+    border-radius: 50px;
+    padding: 8px 14px;
+    background-color: #ffffff;
+    border: 1px solid #71BF3F;
+    color: #71BF3F;
+    transition: all 0.3s ease;
+    font-family: 'Poppins';
+}
+
+form.d-flex .btn-outline-secondary.btn-sm:hover {
+    background-color: #71BF3F;
+    color: white;
+    border-color: #5D7731;
+}
+
+form.d-flex .btn-outline-secondary.btn-sm:hover i {
+    color: white;
+}
+
+h4.fw-bold {
+    color: #5D7731;
+    font-family: 'Poppins';
+    font-size: 24px;
+}

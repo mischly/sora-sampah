@@ -1,7 +1,5 @@
 .dashboard-container {
-    font-family: 'Segoe UI', sans-serif;
     padding-top: 4rem;
-    height: 2000px;
 }
 
 .jumbotron {
@@ -93,7 +91,7 @@
 }
 
 .aksi-cepat-section {
-    background-color: #063B82;
+    background-color: #004D99;
     padding: 40px 30px;
 }
 
@@ -174,3 +172,108 @@
     color: #56A44D;
 }
 
+/* ~ Tugas Hari Ini */
+
+.tugas-hari-ini-section {
+    margin-top: 10rem;
+    padding-bottom: 5rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.tugas-card {
+    background-color: #e4e4e4;
+    border-radius: 15px;
+    padding: 20px;
+    width: 1030px;
+    height: 460px;
+}
+
+.tugas-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    align-items: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.tugas-header-text h3 {
+    padding-top: 10px;
+}
+
+.badge-sisa {
+    background-color: #cde;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.tugas-list {
+    list-style: none;
+    padding: 28px 0;
+    margin: 0;
+}
+
+.tugas-item {
+    background: #fff;
+    padding: 17px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    justify-content: space-between;
+}
+
+.tugas-item.selesai {
+    background-color: #ccc;
+    opacity: 0.7;
+    order: 1;
+}
+
+.checkbox-container {
+    margin-right: 10px;
+}
+
+.tugas-info {
+    flex: 1;
+}
+
+.action-icons {
+    display: flex;
+    gap: 6px;
+}
+
+.action-icons .btn-done {
+    background-color: #6edc91;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: .1s;
+}
+
+.action-icons .btn-done:hover {
+    background-color: #4c9061;
+}
+
+.bi-check-circle-fill {
+    color: white;
+}
+
+.tanggal-hari {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tanggal-hari::before {
+    content: "📅";
+    font-size: 18px;
+}

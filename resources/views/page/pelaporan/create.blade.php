@@ -107,9 +107,10 @@
                             class="form-control border-end-0 @error('email') is-invalid @enderror" 
                             name="email" 
                             id="email" 
-                            value="{{ old('email') }}" 
+                            value="{{ auth()->user()->email }}" 
                             placeholder="Masukan email aktif anda"
-                            required
+                            readonly
+                            disabled
                             autofocus>
                         <span class="input-group-text bg-white border-start-0">
                             <i class="bi bi-envelope-fill text-muted"></i>

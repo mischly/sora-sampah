@@ -27,18 +27,23 @@
                 <p><strong>Pelapor:</strong> {{ $pelaporan->nama_pelapor }}</p>
                 <p><strong>Tanggal Lapor:</strong> {{ $pelaporan->created_at->format('d M Y') }}</p>
                 <p><strong>Lokasi:</strong> {{ $pelaporan->lokasi_kejadian }}</p>
-
-                <p class="mb-1"><strong>Status:</strong></p>
-                <div class="progress-tracking mb-3">
-                    <div class="step {{ $pelaporan->status === 'tertunda' ? 'tertunda' : '' }}">Tertunda</div>
-                    <div class="step {{ $pelaporan->status === 'selesai' ? 'selesai' : '' }}">Selesai</div>
-                </div>
-
+                <p><strong>Kecamatan:</strong> {{ $pelaporan->kecamatan }}</p>
+                <p><strong>Jenis Sampah:</strong> {{ $pelaporan->jenis_sampah }}</p>
                 <p><strong>Deskripsi:</strong></p>
                 <div class="desc-box">{{ $pelaporan->informasi_tambahan }}</div>
+
+                @if ($pelaporan->status === 'tertunda')
+                        <form method="POST" action="{{ route('petugas.laporan.selesai', $pelaporan->id) }}" onsubmit="return confirm('Tandai laporan ini sebagai selesai?')">
+                            @csrf
+                            @method('PATCH')
+                            <button type="submit" class="btn btn-success mt-4 w-100" title="Tandai Selesai">
+                                Perbarui Status Laporan ke Selesai <i class="fas fa-check-circle"></i>
+                            </button>
+                        </form>
+                    @endif
             </div>
 
-            <a href="{{ route('pelaporan.index') }}"
+            <a href="{{ route('petugas.laporan.index') }}"
                class="btn btn-success mt-3 rounded-pill btn-kembali">
                 <i class="bi bi-arrow-left"></i> Kembali
             </a>

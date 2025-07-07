@@ -22,8 +22,15 @@
     color:#777;
     transition:.2s
 }
-.progress-tracking .step.active{
-    background:#71BF3F;
+
+.progress-tracking .step.tertunda{
+    background:#ffc108;
+    color:#fff;
+    font-weight:600
+}
+
+.progress-tracking .step.selesai{
+    background:#00a2e8;
     color:#fff;
     font-weight:600
 }

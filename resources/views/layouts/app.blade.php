@@ -63,7 +63,7 @@
                                     <a class="nav-link {{ request()->is('petugas') ? 'active' : '' }}" href="{{ route('petugas.dashboard') }}">DASHBOARD</a>
                                 </li>
                                 <li  class="nav-item">
-                                    <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="/">LAPORAN</a>
+                                    <a class="nav-link {{ request()->is('petugas/laporan') ? 'active' : '' }}" href="{{ route('petugas.laporan.index') }}">LAPORAN</a>
                                 </li>
                                 <li  class="nav-item">
                                     <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="/">JADWAL</a>
