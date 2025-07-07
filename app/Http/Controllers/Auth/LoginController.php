@@ -42,8 +42,16 @@ class LoginController extends Controller
 
     protected function authenticated(Request $request, $user)
     {
-        // flash message: “Login berhasil, selamat datang <nama>”
         Session::flash('success', 'Login berhasil! Selamat datang ' . $user->name . '.');
-        // jika mau redirect custom, bisa return redirect()->intended('/dashboard');
+
+        if ($user->hasRole('petugas')) {
+            return redirect()->route('petugas.index');
+        }
+
+        if ($user->hasRole('admin')) {
+            return redirect()->route('/');
+        }
+
+        return redirect()->intended('/');
     }
 }

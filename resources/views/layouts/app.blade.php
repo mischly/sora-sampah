@@ -44,44 +44,83 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                    
+                        
                     </ul>
-
+                    
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
-                        <li  class="nav-item">
-                            <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="/">BERANDA</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {{ request()->is('pelaporan') ? 'active' : '' }}" href="{{ route('pelaporan.index') }}">PELAPORAN</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {{ request()->is('artikel') ? 'active' : '' }}" href="{{ route('artikel.index') }}">ARTIKEL</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {{ request()->is('jadwal') ? 'active' : '' }}" href="{{ route('jadwal.index') }}">JADWAL</a>
-                        </li>
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item login">    
-                                    <a class="nav-link {{ request()->is('login') ? 'active' : '' }}" href="{{ route('login') }}">{{ __('LOGIN') }}</a>
-                                </li>
+                        
+                        <!-- SUDAH LOGIN -->
+                        @auth
+                            <!-- Admin Navbar -->
+                            @if (Auth::user()->hasRole('admin'))
+                                
                             @endif
 
-                            @if (Route::has('register'))
-                                <li class="nav-item register">
-                                    <a class="nav-link {{ request()->is('register') ? 'active' : '' }}" href="{{ route('register') }}">{{ __('REGISTER') }}</a>
+                            <!-- Petugas Navbar -->
+                            @if (Auth::user()->hasRole('petugas'))
+                                <li  class="nav-item">
+                                    <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="/">DASHBOARD</a>
+                                </li>
+                                <li  class="nav-item">
+                                    <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="/">LAPORAN</a>
+                                </li>
+                                <li  class="nav-item">
+                                    <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="/">JADWAL</a>
                                 </li>
                             @endif
+                            
+                            <!-- User Navbar -->
+                            @if (Auth::user()->hasRole('user'))
+                                <li  class="nav-item">
+                                    <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="/">BERANDA</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link {{ request()->is('pelaporan') ? 'active' : '' }}" href="{{ route('pelaporan.index') }}">PELAPORAN</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link {{ request()->is('artikel') ? 'active' : '' }}" href="{{ route('artikel.index') }}">ARTIKEL</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link {{ request()->is('jadwal') ? 'active' : '' }}" href="{{ route('jadwal.index') }}">JADWAL</a>
+                                </li>
+                            @endif
+                        @endauth
+                        
+                        <!-- BELUM LOGIN -->
+                        @guest
+                            <!-- User Navbar -->
+                            <li  class="nav-item">
+                                <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="/">BERANDA</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{ request()->is('pelaporan') ? 'active' : '' }}" href="{{ route('pelaporan.index') }}">PELAPORAN</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{ request()->is('artikel') ? 'active' : '' }}" href="{{ route('artikel.index') }}">ARTIKEL</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{ request()->is('jadwal') ? 'active' : '' }}" href="{{ route('jadwal.index') }}">JADWAL</a>
+                            </li>
+                        @if (Route::has('login'))
+                            <li class="nav-item login">    
+                                <a class="nav-link {{ request()->is('login') ? 'active' : '' }}" href="{{ route('login') }}">{{ __('LOGIN') }}</a>
+                            </li>
+                        @endif
+                        
+                        @if (Route::has('register'))
+                            <li class="nav-item register">
+                                <a class="nav-link {{ request()->is('register') ? 'active' : '' }}" href="{{ route('register') }}">{{ __('REGISTER') }}</a>
+                            </li>
+                        @endif
                         @else
                             <li class="nav-item dropdown user-dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle user-avatar no-underline" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    @if(Auth::user()->avatar)
-                                        <img src="{{ asset('storage/' . Auth::user()->avatar) }}" alt="Avatar" class="avatar-img">
-                                    @else
-                                        <i class="bi bi-person-circle"></i>
-                                    @endif
+                                @if(Auth::user()->avatar)
+                                    <img src="{{ asset('storage/' . Auth::user()->avatar) }}" alt="Avatar" class="avatar-img">
+                                @else
+                                    <i class="bi bi-person-circle"></i>
+                                @endif
                                 </a>
 
                                 <ul class="dropdown-menu dropdown-menu-end animated-dropdown" aria-labelledby="navbarDropdown">
@@ -90,7 +129,7 @@
                                     <li>
                                         <a class="dropdown-item text-danger" href="{{ route('logout') }}"
                                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                            <i class="bi bi-box-arrow-right me-2"></i> Logout
+                                        <i class="bi bi-box-arrow-right me-2"></i> Logout
                                         </a>
                                     </li>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

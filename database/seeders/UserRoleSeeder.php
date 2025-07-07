@@ -14,11 +14,29 @@ class UserRoleSeeder extends Seeder
      */
     public function run(): void
     {
-        $user = User::where('email', 'admin@example.com')->first();
+        // Ambil role admin dan petugas dari tabel roles
         $adminRole = Role::where('name', 'admin')->first();
+        $petugasRole = Role::where('name', 'petugas')->first();
+        $userRole = Role::where('name', 'user')->first();
 
-        if ($user && $adminRole && !$user->hasRole('admin')) {
-            $user->roles()->attach($adminRole->id);
+        // Ambil user yang sudah dibuat
+        $adminUser = User::where('email', 'admin@example.com')->first();
+        $petugasUser = User::where('email', 'petugas@example.com')->first();
+        $userUser = User::where('email', 'user@example.com')->first();
+
+        // Pasangkan role admin ke user admin
+        if ($adminUser && $adminRole && !$adminUser->hasRole('admin')) {
+            $adminUser->roles()->attach($adminRole->id);
+        }
+
+        // Pasangkan role petugas ke user petugas
+        if ($petugasUser && $petugasRole && !$petugasUser->hasRole('petugas')) {
+            $petugasUser->roles()->attach($petugasRole->id);
+        }
+
+        // Pasangkan role user ke user user
+        if ($userUser && $userRole && !$userUser->hasRole('user')) {
+            $userUser->roles()->attach($userRole->id);
         }
     }
 }

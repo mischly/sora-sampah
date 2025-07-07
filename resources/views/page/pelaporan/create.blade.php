@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @push('styles')
-    @vite(['resources/css/page-css/form_pelaporan.css'])
+    @vite(['resources/css/page-css/form-pelaporan.css'])
 @endpush
 
 @push('scripts')
