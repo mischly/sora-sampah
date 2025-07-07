@@ -45,11 +45,11 @@ class LoginController extends Controller
         Session::flash('success', 'Login berhasil! Selamat datang ' . $user->name . '.');
 
         if ($user->hasRole('petugas')) {
-            return redirect()->route('petugas.index');
+            return redirect()->route('petugas.dashboard');
         }
 
         if ($user->hasRole('admin')) {
-            return redirect()->route('/');
+            return redirect()->route('index');
         }
 
         return redirect()->intended('/');

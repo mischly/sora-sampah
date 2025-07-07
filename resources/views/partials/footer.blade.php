@@ -39,6 +39,6 @@
     <hr class="bg-light">
 
     <div class="container text-center">
-        <p class="mb-0">&copy; {{ date('Y') }} Sora Sampah Bandung. Made with love by <a href="https://github.com/mischly/sora-sampah" style="text-decoration: none; color: lime">Kelompok 1</a>.</p>
+        <p class="mb-0">&copy; {{ date('Y') }} Sora Sampah Bandung. Made with love by <a href="https://github.com/mischly/sora-sampah" style="text-decoration: none; color: lime" target="_blank">Kelompok 1</a>.</p>
     </div>
 </footer>

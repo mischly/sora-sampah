@@ -25,11 +25,9 @@
     </div>
 </div>
 
-<div class="text-center py-5 bg-white">
-    <h1 class="big-title display-6 e-bold tx-info text-#04709A" style="color: #04709A;">Informasi Terbaru</h1>
-</div>
 
 <div class="content-artikel">
+    <h1 class="big-title display-6 e-bold tx-info text-center pb-4">Informasi Terbaru</h1>
     <div class="grid-artikel">
         <!-- Kartu 1 -->
         <div class="card-artikel">

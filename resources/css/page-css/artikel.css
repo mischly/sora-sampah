@@ -65,3 +65,7 @@ div.card-body {
 .bg-transparent {
     background-color: transparent !important;
 }
+
+.tx-info {
+    color: #04709A;
+}

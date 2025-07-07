@@ -54,13 +54,13 @@
                         @auth
                             <!-- Admin Navbar -->
                             @if (Auth::user()->hasRole('admin'))
-                                
+
                             @endif
 
                             <!-- Petugas Navbar -->
                             @if (Auth::user()->hasRole('petugas'))
                                 <li  class="nav-item">
-                                    <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="/">DASHBOARD</a>
+                                    <a class="nav-link {{ request()->is('petugas') ? 'active' : '' }}" href="{{ route('petugas.dashboard') }}">DASHBOARD</a>
                                 </li>
                                 <li  class="nav-item">
                                     <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="/">LAPORAN</a>

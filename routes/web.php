@@ -34,6 +34,6 @@ Route::get('/menu', function () {
 
 Route::middleware(['auth', RoleMiddleware::class . ':petugas'])->group(function () {
     Route::get('/petugas', function () {
-        return view('petugas.index');
-    })->name('petugas.index');
+        return view('petugas.dashboard');
+    })->name('petugas.dashboard');
 });

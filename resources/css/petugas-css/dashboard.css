@@ -1,0 +1,176 @@
+.dashboard-container {
+    font-family: 'Segoe UI', sans-serif;
+    padding-top: 4rem;
+    height: 2000px;
+}
+
+.jumbotron {
+    position: relative;
+    background-image: url('../images/jumbotron13.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    color: white;
+    padding: 5.8rem 3rem;
+    overflow: hidden;
+}
+
+.jumbotron .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(30, 93, 152, 0.7);
+    z-index: 1;
+}
+
+.profile-section {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+}
+
+.greeting {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.greeting h4 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.greeting p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.notif-icon {
+    font-size: 20px;
+    color: white;
+}
+
+.summary-boxes {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 80px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 2rem 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(8px);
+}
+
+.box {
+    text-align: center;
+    color: white;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background-color: white;
+    color: #102A43;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 auto 10px;
+}
+
+.aksi-cepat-section {
+    background-color: #063B82;
+    padding: 40px 30px;
+}
+
+.aksi-title {
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.aksi-container {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.aksi-card {
+    width: 380px;
+    height: 280px;
+    border-radius: 12px;
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-weight: 500;
+    font-size: 24px;
+    transition: transform 0.2s ease;
+}
+
+.aksi-card:hover {
+    transform: translateY(-4px);
+}
+
+.aksi-card i {
+    font-size: 60px;
+    margin-bottom: 12px;
+}
+
+/* Sudut atas warna solid */
+.aksi-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 32px;
+    width: 100%;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* LAPORAN */
+.aksi-card.laporan {
+    background-color: #F4C7C3;
+}
+
+.aksi-card.laporan::before {
+    background-color: #B53A3A;
+}
+
+.aksi-card.laporan i {
+    color: #E6492D;
+}
+
+/* JADWAL */
+.aksi-card.jadwal {
+    background-color: #D6F2D7;
+}
+
+.aksi-card.jadwal::before {
+    background-color: #56A44D;
+}
+
+.aksi-card.jadwal i {
+    color: #56A44D;
+}
+
