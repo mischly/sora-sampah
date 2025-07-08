@@ -33,14 +33,14 @@
                 <div class="desc-box">{{ $pelaporan->informasi_tambahan }}</div>
 
                 @if ($pelaporan->status === 'tertunda')
-                        <form method="POST" action="{{ route('petugas.laporan.selesai', $pelaporan->id) }}" onsubmit="return confirm('Tandai laporan ini sebagai selesai?')">
-                            @csrf
-                            @method('PATCH')
-                            <button type="submit" class="btn btn-success mt-4 w-100" title="Tandai Selesai">
-                                Perbarui Status Laporan ke Selesai <i class="fas fa-check-circle"></i>
-                            </button>
-                        </form>
-                    @endif
+                    <form id="form-selesai" method="POST" action="{{ route('petugas.laporan.selesai', $pelaporan->id) }}">
+                        @csrf
+                        @method('PATCH')
+                        <button type="button" id="btn-konfirmasi" class="btn btn-success mt-4 w-100" title="Tandai Selesai">
+                            Perbarui Status Laporan ke Selesai <i class="fas fa-check-circle"></i>
+                        </button>
+                    </form>
+                @endif
             </div>
 
             <a href="{{ route('petugas.laporan.index') }}"
@@ -52,3 +52,24 @@
 </div>
 
 @endsection
+
+@push('scripts')
+<script>
+    document.getElementById('btn-konfirmasi').addEventListener('click', function (e) {
+        Swal.fire({
+            title: 'Apakah Anda yakin?',
+            text: "Laporan akan ditandai sebagai selesai.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#198754',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, tandai selesai!',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById('form-selesai').submit();
+            }
+        });
+    });
+</script>
+@endpush

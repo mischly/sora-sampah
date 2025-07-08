@@ -54,8 +54,8 @@ input.search:focus {
 
 /* Header tabel */
 .table-custom thead {
-    background-color: #5D7731;
-    color: white;
+    background-color: #d9d9d9;
+    color: #000;
     font-weight: bold;
 }
 
@@ -68,8 +68,8 @@ input.search:focus {
 
 /* Baris data */
 .table-custom tbody tr {
-    background-color: #d9d9d9;
-    color: #000;
+    background-color: #5D7731;
+    color: white;
     border: 1px solid #ccc;
 }
 

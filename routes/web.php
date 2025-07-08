@@ -20,19 +20,22 @@ Auth::routes();
 
 Route::resource('pelaporan', PelaporanController::class);   
 Route::resource('artikel', ArtikelController::class);
-Route::resource('profile', ProfileController::class);
 Route::resource('jadwal', JadwalController::class);
 
-// Route::get('/menu', function () {
-    //     return view('menu.index');
-// })->name('menu.index');
+// Middleware Profile User
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/profil', [ProfileController::class, 'index'])->name('profile.index');
+    Route::get('/profil/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::match(['put', 'patch'], '/profil', [ProfileController::class, 'update'])->name('profile.update');
+
+    Route::get('/profil/{id}', [ProfileController::class, 'show'])->name('profile.show');
+});
 
 // Middleware role petugas
 
-Route::middleware(['auth', RoleMiddleware::class . ':petugas'])->group(function () {
-    Route::get('/petugas', function () {
-        return view('petugas.dashboard');
-    })->name('petugas.dashboard');
+Route::middleware(['auth', 'role:petugas'])->group(function () {
+    Route::get('/petugas', [PetugasController::class, 'dashboard'])->name('petugas.dashboard');
     
     Route::get('/petugas/laporan', [PelaporanController::class, 'indexPetugas'])->name('petugas.laporan.index');
 
@@ -40,3 +43,4 @@ Route::middleware(['auth', RoleMiddleware::class . ':petugas'])->group(function 
 
     Route::patch('/petugas/laporan/{id}/selesai', [PelaporanController::class, 'markAsSelesai'])->name('petugas.laporan.selesai');
 });
+

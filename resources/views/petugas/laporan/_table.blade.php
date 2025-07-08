@@ -8,7 +8,7 @@
             <th>TANGGAL</th>
             <th>PELAPOR</th>
             <th>STATUS</th>
-            <th style="width: 200px">AKSI</th>
+            <th style="width: 100px">AKSI</th>
         </tr>
     </thead>
     <tbody>
@@ -26,7 +26,7 @@
                 </td>
                 <td>
                     <div class="btn-group btn-group-sm">
-                        <a href="{{ route('petugas.laporan.show', $p->id) }}" class="btn btn-outline-success" title="Detail">
+                        <a href="{{ route('petugas.laporan.show', $p->id) }}" class="btn btn-outline-light" title="Detail">
                             Detail <i class="fas fa-eye"></i>
                         </a>
                     </div>

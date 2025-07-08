@@ -92,27 +92,6 @@
 
 /* end navbar*/
 
-
-/* Tombol Menu */
-
-/* .nav-link.menu {
-    background: linear-gradient(135deg, rgba(27, 197, 234, 1), rgba(24, 208, 121, 1));
-    color: white;
-    padding: 6px 16px;
-    border-radius: 6px;
-    font-weight: 600;
-    transition: .5s fade;
-}
-
-.navbar-nav .nav-link.menu:hover {
-    background: rgba(24, 208, 121, 1.000);
-    color: #fff;
-}
-
-.navbar-nav .nav-link.menu:hover::after {
-    width: 0;
-} */
-
 .nav-link.menu {
   position: relative;
   display: inline-block;
@@ -162,4 +141,24 @@
 
 .nav-link.menu:hover {
     color: #fff;
+}
+
+.navbar .user-dropdown .user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.navbar .user-dropdown .user-avatar img.avatar-img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
 }

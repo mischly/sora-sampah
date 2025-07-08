@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}?v=1">
     <title>{{ config('app.name', 'Sora Sampah Bandung') }}</title>
     
     <!-- Fonts -->
@@ -66,7 +66,7 @@
                                     <a class="nav-link {{ request()->is('petugas/laporan') ? 'active' : '' }}" href="{{ route('petugas.laporan.index') }}">LAPORAN</a>
                                 </li>
                                 <li  class="nav-item">
-                                    <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="/">JADWAL</a>
+                                    <a class="nav-link {{ request()->is('jadwal') ? 'active' : '' }}" href="{{ route('jadwal.index') }}">JADWAL</a>
                                 </li>
                             @endif
                             

@@ -16,6 +16,8 @@ export default defineConfig({
                 'resources/css/auth/auth.css',
                 'resources/css/petugas-css/dashboard.css',
                 'resources/css/petugas-css/laporan.css',
+                'resources/css/profile/index.css',
+                'resources/css/profile/edit.css',
             ],
             refresh: true,
         }),
