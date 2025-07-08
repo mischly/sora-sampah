@@ -144,8 +144,11 @@
     <div class="jumbotron">
         <div class="overlay"></div>
         <div class="profile-section">
-            {{-- FOTO PROFILE PLACEHOLDER --}}
-            <img src="{{ asset('images/mantap.png') }}" alt="Profile" class="profile-img">
+            @if (Auth::user()->avatar)
+                <img src="{{ asset('storage/' . Auth::user()->avatar) }}" alt="Avatar" class="avatar-img rounded-circle">
+            @else
+                <i class="bi bi-person-circle avatar-icon"></i>
+            @endif
             <div class="greeting">
                 <h4 id="greetingText" class="fs-2"></h4>
                 <p class="badge" style="font-size: 16px">{{ Auth::user()->role ?? 'Petugas' }}</p>
@@ -185,7 +188,7 @@
             <div class="tugas-card">
                 <div class="tanggal-hari" id="tanggalHariIni"></div>
                 <div class="tugas-header">
-                    <div class="tugas-header-text">
+                    <div class="tugas-header-text"> 
                         <h3 class="fs-3 fw-bold">Tugas Hari ini</h3>
                     </div>
                     <span class="badge-sisa" id="sisaTugas">Tersisa 3</span>

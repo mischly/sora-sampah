@@ -277,3 +277,15 @@
     content: "📅";
     font-size: 18px;
 }
+
+.avatar-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.avatar-icon {
+    font-size: 80px;
+    color: #ccc;
+}
