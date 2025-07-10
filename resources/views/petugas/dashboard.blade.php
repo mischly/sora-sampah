@@ -151,7 +151,7 @@
             @endif
             <div class="greeting">
                 <h4 id="greetingText" class="fs-2"></h4>
-                <p class="badge" style="font-size: 16px">{{ Auth::user()->role ?? 'Petugas' }}</p>
+                <p class="badge bg-success" style="font-size: 16px">{{ Auth::user()->role ?? 'Petugas' }}</p>
             </div>
             <div class="notif-icon">
                 <i class="bi bi-bell-fill"></i>
@@ -164,7 +164,7 @@
             </div>
             <div class="box">
                 <div class="circle">{{ $jumlahSelesai }}</div>
-                <p>Lapoan Selesai</p>
+                <p>Laporan Selesai</p>
             </div>
             <div class="box">
                 <div class="circle">{{ $jumlahTertunda }}</div>

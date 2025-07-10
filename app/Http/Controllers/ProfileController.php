@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
     public function __construct()
     {
-        // Batasi hanya untuk role 'user' biasa
-        $this->middleware(['auth', 'role:user']);
+        $this->middleware(['auth']);
     }
 
     /**
@@ -93,5 +93,30 @@ class ProfileController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function passwordForm()
+{
+    return view('profile.password');
+}
+
+    public function updatePassword(Request $request)
+    {
+        $request->validate([
+            'current_password' => 'required',
+            'new_password' => 'required|string|min:8|confirmed',
+        ]);
+
+        $user = Auth::user();
+
+        if (!Hash::check($request->current_password, $user->password)) {
+            return back()->with('error', 'Password lama tidak sesuai.');
+        }
+
+        $user->update([
+            'password' => Hash::make($request->new_password),
+        ]);
+
+        return redirect()->route('profile.index')->with('success', 'Password berhasil diperbarui.');
     }
 }

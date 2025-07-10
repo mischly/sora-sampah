@@ -9,7 +9,7 @@ class PetugasController extends Controller
 {
     public function dashboard()
     {
-
+    
         $jumlahTertunda = Pelaporan::where('status', 'tertunda')->count();
         $jumlahSelesai = Pelaporan::where('status', 'selesai')->count();
 

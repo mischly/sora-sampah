@@ -54,7 +54,7 @@
 
             <div class="d-flex justify-content-between">
                 <a href="{{ url()->previous() }}" class="btn btn-dark"><i class="bi bi-arrow-left me-1"></i> Kembali</a>
-                @if ($user->id === Auth::id())
+                @if (Auth::user()->id === Auth::id())
                     <a href="{{ route('profile.edit') }}" class="btn btn-info text-white">
                         <i class="bi bi-pencil-square me-1"></i> Edit
                     </a>

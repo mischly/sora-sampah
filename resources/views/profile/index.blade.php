@@ -56,8 +56,8 @@
             </div>
 
             <div class="d-flex justify-content-between">
+                <a href="{{ url('/') }}" class="btn btn-danger"><i class="bi bi-arrow-left me-1"></i> Kembali</a>
                 <a href="{{ route('profile.edit') }}" class="btn btn-info text-white"><i class="bi bi-pencil-square me-1"></i> Edit Profil</a>
-                <a href="{{ url()->previous() }}" class="btn btn-dark"><i class="bi bi-arrow-left me-1"></i> Kembali</a>
             </div>
         </div>
     </div>

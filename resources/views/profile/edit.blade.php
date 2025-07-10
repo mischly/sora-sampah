@@ -13,7 +13,7 @@
         <div class="card-body">
             <div class="d-flex justify-content-between align-items-start mb-4">
                 <h3>Edit Profil</h3>
-                <a href="{{ route('profile.index') }}" class="btn btn-secondary"><i class="bi bi-arrow-left me-1"></i> Kembali</a>
+                <a href="{{ route('profile.index') }}" class="btn btn-danger"><i class="bi bi-arrow-left me-1"></i> Kembali</a>
             </div>
             <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -55,7 +55,7 @@
                             <input type="email" class="form-control" value="{{ Auth::user()->email }}" disabled>
                         </div>
                         <div class="mt-4">
-                            <a href="{{ route('password.request') }}" class="btn btn-outline-primary w-100"><i class="bi bi-lock me-1"></i> Ganti Password</a>
+                            <a href="{{ route('profile.password.form') }}" class="btn btn-outline-primary w-100"><i class="bi bi-lock me-1"></i> Ganti Password</a>
                         </div>
                         <div class="d-flex justify-content-end mt-5">
                             <button type="submit" class="btn btn-success"><i class="bi bi-check-circle me-1"></i> Simpan</button>

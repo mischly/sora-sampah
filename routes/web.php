@@ -29,6 +29,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/profil/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::match(['put', 'patch'], '/profil', [ProfileController::class, 'update'])->name('profile.update');
 
+    Route::get('/profil/password', [ProfileController::class, 'passwordForm'])->name('profile.password.form');
+    Route::put('/profil/password', [ProfileController::class, 'updatePassword'])->name('profile.password.update');
+
     Route::get('/profil/{id}', [ProfileController::class, 'show'])->name('profile.show');
 });
 

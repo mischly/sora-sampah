@@ -65,7 +65,7 @@
                             class="form-control border-end-0 @error('nama_pelapor') is-invalid @enderror" 
                             name="nama_pelapor" 
                             id="nama_pelapor" 
-                            value="{{ old('nama_pelapor') }}" 
+                            value="{{ auth()->user()->name }}" 
                             placeholder="Masukkan nama lengkap anda"
                             required
                             autofocus>
@@ -86,7 +86,7 @@
                             class="form-control border-end-0 @error('no_telpon') is-invalid @enderror" 
                             name="no_telpon" 
                             id="no_telpon" 
-                            value="{{ old('no_telpon') }}" 
+                            value="{{ auth()->user()->phone }}" 
                             placeholder="Masukan no telepon anda"
                             required
                             autofocus>
