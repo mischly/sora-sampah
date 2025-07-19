@@ -1,0 +1,92 @@
+body {
+    background-color: #004089;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.hero-section {
+    width: 100%;
+    height: 40vh;
+    background: url('../images/bg7_admin.jpg') no-repeat center center;
+    background-size: cover;
+    margin-top: 60px;
+}
+
+.section-title {
+    background-color: #004089;
+    color: white;
+    font-size: 28px;
+    font-weight: 600;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.table-container {
+    background-color: #004089;
+    padding: 0 20px 30px;
+}
+
+.add-user-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0 15px;
+}
+
+.btn-success {
+    font-size: 16px;
+    padding: 8px 16px;
+}
+
+.table {
+    font-size: 17px;
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+}
+
+.table thead th {
+    background-color: #D9D9D9 !important;
+    color: black !important;
+    border: none !important;
+    vertical-align: middle;
+    text-align: center;
+    padding: 14px;
+}
+
+.table tbody td {
+    background-color: #1a392e;
+    color: white;
+    vertical-align: middle;
+    padding: 14px;
+    text-align: center;
+    border-bottom: none !important;
+}
+
+/* Garis antar kolom: putih kecuali aksi kiri & no kanan */
+.table tbody td:not(:last-child),
+.table thead th:not(:last-child) {
+    border-right: 2px solid #FFFFFF;
+}
+
+/* Tambahkan garis di kanan kolom NO */
+.table td:nth-child(1),
+.table th:nth-child(1) {
+    border-right: 2px solid #FFFFFF;
+}
+
+/* Tambahkan garis di kiri kolom AKSI */
+.table td:last-child,
+.table th:last-child {
+    border-left: 2px solid #FFFFFF;
+    border-right: none !important;
+}
+
+.action-icons i {
+    font-size: 18px;
+    margin: 0 5px;
+}
+
+.action-icons .text-primary:hover,
+.action-icons .text-warning:hover,
+.action-icons .text-danger:hover {
+    opacity: 0.8;
+}

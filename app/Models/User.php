@@ -55,6 +55,9 @@ class User extends Authenticatable
     }
 
     public function hasRole($role) {
+        if (is_array($role)) {
+            return $this->roles()->whereIn('name', $role)->exists();
+        }
         return $this->roles()->where('name', $role)->exists();
     }
 
@@ -64,4 +67,9 @@ class User extends Authenticatable
             $this->roles()->attach($role->id);
         }
     }
+        public function isAdmin()
+    {
+        return $this->roles()->where('name', 'admin')->exists();
+    }
+
 }

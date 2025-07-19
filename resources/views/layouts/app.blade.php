@@ -54,6 +54,25 @@
                         @auth
                             <!-- Admin Navbar -->
                             @if (Auth::user()->hasRole('admin'))
+                            <li  class="nav-item">
+                                <a class="nav-link {{ request()->is('admin') ? 'active' : '' }}" href="{{ route('admin.dashboard') }}">DASHBOARD</a>
+                            </li>
+
+                            <li  class="nav-item">
+                                <a class="nav-link {{ request()->is('petugas/laporan') ? 'active' : '' }}" href="{{ route('petugas.laporan.index') }}">LAPORAN</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link {{ request()->is('artikel') ? 'active' : '' }}" href="{{ route('artikel.index') }}">ARTIKEL</a>
+                            </li>
+
+                            <li  class="nav-item">
+                                <a class="nav-link {{ request()->is('jadwal') ? 'active' : '' }}" href="{{ route('jadwal.index') }}">JADWAL</a>
+                            </li>
+                     
+                            <li  class="nav-item">
+                                <a class="nav-link {{ request()->is('user') ? 'active' : '' }}" href="{{ route('admin.user.index') }}">USER</a>
+                            </li>
 
                             @endif
 

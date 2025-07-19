@@ -1,0 +1,170 @@
+body {
+    background-color: #0C233E;
+    font-family: 'Segoe UI', sans-serif;
+    padding-top: 80px;
+}
+
+.top-banner {
+    width: 100%;
+    height: 50vh;
+    background-image: url('../images/bg1_admin.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.top-banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.4);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    z-index: 1;
+}
+
+.top-banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: white;
+    text-align: center;
+}
+
+.icon-user {
+    font-size: 60px;
+    padding: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    color: white;
+}
+
+.top-banner-content h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.top-banner-content p {
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+.admin-dashboard {
+    min-height: 100vh;
+    padding: 40px;
+    position: relative;
+    color: white;
+    background-color: #0C233E;
+}
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.stat-card {
+    background-image: url('../images/bg6_admin.jpg'); /* Pastikan gambar ini tersedia */
+    background-size: cover;
+    background-position: center;
+    border-radius: 28px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 200px;
+    width: 431px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 25px;
+}
+
+/* Opsional: Layer gelap di atas background stat-card */
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+/* Pastikan isi stat-card tetap terlihat */
+.stat-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+.stat-image-wrapper {
+    border-radius: 50%;
+    width: 220px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+
+.stat-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.stat-title {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 2px;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+}
+
+.judul {
+    margin-top: 100px;
+}
+
+.avatar-img {
+    border: 3px solid white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+@media (max-width: 768px) {
+    .admin-dashboard {
+        padding: 20px;
+    }
+
+    .top-banner-content h1 {
+        font-size: 1.4rem;
+    }
+}

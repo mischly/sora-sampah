@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\UserController as AdminUserController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController; 
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\PelaporanController;
@@ -37,7 +40,7 @@ Route::middleware(['auth'])->group(function () {
 
 // Middleware role petugas
 
-Route::middleware(['auth', 'role:petugas'])->group(function () {
+Route::middleware(['auth', 'role:petugas,admin'])->group(function () {
     Route::get('/petugas', [PetugasController::class, 'dashboard'])->name('petugas.dashboard');
     
     Route::get('/petugas/laporan', [PelaporanController::class, 'indexPetugas'])->name('petugas.laporan.index');
@@ -47,3 +50,17 @@ Route::middleware(['auth', 'role:petugas'])->group(function () {
     Route::patch('/petugas/laporan/{id}/selesai', [PelaporanController::class, 'markAsSelesai'])->name('petugas.laporan.selesai');
 });
 
+//middelwware role admin
+
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/admin', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+
+    Route::put('/admin/user/{id}', [AdminUserController::class, 'update'])->name('admin.user.update');
+
+
+    Route::prefix('admin')->name('admin.')->group(function () {
+        Route::resource('user', AdminUserController::class);
+    });
+
+
+});

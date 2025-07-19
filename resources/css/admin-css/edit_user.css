@@ -1,0 +1,122 @@
+body {
+    background-color: #f8f9fa;
+    background-image: url('../images/bg.jpg');
+    font-family: 'Segoe UI', sans-serif;
+    }
+
+    .form-container {
+        max-width: 900px;
+        margin: 100px auto 40px;
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        margin-top: 200px;
+    }
+
+
+    .form-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+
+    .form-title {
+        font-size: 24px;
+        font-weight: bold;
+        color: black;
+    }
+
+    .btn-kembali {
+        background-color: #736E6E;
+        color: white;
+        border: none;
+        padding: 8px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+    }
+
+    .form-main {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .left-upload {
+        flex: 1 1 30%;
+        text-align: center;
+    }
+
+    .upload-preview {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: #e9ecef;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border: 2px dashed #adb5bd;
+        margin: 0 auto 12px;
+        position: relative;
+    }
+
+    .upload-preview img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .upload-preview i {
+        font-size: 100px;
+        color: #009B4C;
+    }
+
+    .right-form {
+        flex: 1 1 65%;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        font-weight: 600;
+        margin-bottom: 6px;
+        display: block;
+    }
+
+    .form-control {
+        border-radius: 10px;
+    }
+
+    .row-cols {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .row-cols > .col-half {
+        flex: 1 1 48%;
+    }
+
+    .btn-simpan {
+        background-color: #009B4C;
+        color: white;
+        border: none;
+        padding: 10px 30px;
+        border-radius: 8px;
+    }
+
+    .btn-simpan i {
+        margin-right: 8px;
+    }
+
+    .text-end {
+        text-align: end;
+    }
+    footer {
+    display: none !important;
+    }
