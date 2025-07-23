@@ -46,10 +46,10 @@
                         <td class="action-icons">
                             <a href="{{ route('admin.user.show', $user->id) }}" class="text-primary"><i class="bi bi-eye"></i></a>
                             <a href="{{ route('admin.user.edit', $user->id) }}" class="text-warning"><i class="bi bi-pencil-square"></i></a>
-                            <form action="{{ route('admin.user.destroy', $user->id) }}" method="POST" class="d-inline">
+                            <form id="form-selesai" action="{{ route('admin.user.destroy', $user->id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-link text-danger p-0 m-0" onclick="return confirm('Hapus user ini?')">
+                                <button type="button" id="btn-konfirmasi" class="btn btn-link text-danger p-0 m-0" title="Tandai Selesai">
                                     <i class="bi bi-trash"></i>
                                 </button>
                             </form>
@@ -62,3 +62,25 @@
     </div>
 </div>
 @endsection
+
+@push('scripts')
+<script>
+    document.getElementById('btn-konfirmasi').addEventListener('click', function (e) {
+        Swal.fire({
+            title: 'Apakah Anda yakin?',
+            text: "User akan dihapus",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#198754',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, Hapus!',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById('form-selesai').submit();
+            }
+        });
+    });
+</script>
+@endpush
+

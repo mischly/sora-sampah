@@ -59,7 +59,7 @@
                             </li>
 
                             <li  class="nav-item">
-                                <a class="nav-link {{ request()->is('petugas/laporan') ? 'active' : '' }}" href="{{ route('petugas.laporan.index') }}">LAPORAN</a>
+                                <a class="nav-link {{ request()->is('admin/laporan') ? 'active' : '' }}" href="{{ route('admin.laporan.index') }}">LAPORAN</a>
                             </li>
 
                             <li class="nav-item">
@@ -71,7 +71,7 @@
                             </li>
                      
                             <li  class="nav-item">
-                                <a class="nav-link {{ request()->is('user') ? 'active' : '' }}" href="{{ route('admin.user.index') }}">USER</a>
+                                <a class="nav-link {{ request()->is('admin/user') ? 'active' : '' }}" href="{{ route('admin.user.index') }}">USER</a>
                             </li>
 
                             @endif

@@ -32,6 +32,26 @@ class PelaporanController extends Controller
 
         return view('page.pelaporan.index', compact('pelaporans', 'search'));
     }
+    
+    public function adminLaporan(Request $request)
+    {
+        $search = $request->query('q');
+    
+        $pelaporans = Pelaporan::when($search, function ($query) use ($search) {
+            $query->where('informasi_tambahan', 'like', "%{$search}%")
+                  ->orWhere('lokasi_kejadian', 'like', "%{$search}%")
+                  ->orWhere('nama_pelapor', 'like', "%{$search}%");
+            })
+            ->latest()
+            ->paginate(10)                        
+            ->withQueryString();     
+            
+        if ($request->ajax()) {
+            return view('page.pelaporan._table', compact('pelaporans', 'search'))->render();
+        }
+
+        return view('admin.laporan.index', compact('pelaporans', 'search'));
+    }
 
     public function indexPetugas(Request $request)
     {
@@ -114,12 +134,18 @@ class PelaporanController extends Controller
         $pelaporan = Pelaporan::findOrFail($id);
         return view('page.pelaporan.show', compact('pelaporan'));
     }
+    
+    public function showAdminLaporan($id)
+    {
+        $pelaporan = Pelaporan::findOrFail($id);
+        return view('page.pelaporan.show', compact('pelaporan'));
+    }
 
     public function showPetugas($id)
-        {
-            $pelaporan = Pelaporan::findOrFail($id);
-            return view('petugas.laporan.show', compact('pelaporan'));
-        }
+    {
+        $pelaporan = Pelaporan::findOrFail($id);
+        return view('petugas.laporan.show', compact('pelaporan'));
+    }
 
     /**
      * Show the form for editing the specified resource.

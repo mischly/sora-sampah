@@ -1,4 +1,3 @@
-@php use Illuminate\Support\Str; @endphp
 <table class="table-custom">
     <thead>
         <tr>
@@ -12,9 +11,9 @@
         </tr>
     </thead>
     <tbody>
-        @forelse($pelaporans as $p)
+        @forelse($pelaporans as $i => $p)
             <tr>
-                <td>{{ $loop->iteration + ($pelaporans->currentPage() - 1) * $pelaporans->perPage() }}</td>
+                <td>{{ $loop->iteration }}</td>
                 <td>{{ Str::limit($p->informasi_tambahan, 60) }}</td>
                 <td>{{ $p->lokasi_kejadian }}</td>
                 <td>{{ \Carbon\Carbon::parse($p->created_at)->format('d M Y') }}</td>
@@ -26,7 +25,7 @@
                 </td>
                 <td>
                     <div class="btn-group btn-group-sm">
-                        <a href="{{ route('petugas.laporan.show', $p->id) }}" class="btn btn-outline-light" title="Detail">
+                        <a href="{{ route('admin.laporan.show', $p->id) }}" class="btn btn-outline-light" title="Detail">
                             Detail <i class="fas fa-eye"></i>
                         </a>
                     </div>

@@ -28,7 +28,7 @@
         </div>
 
         <div class="table-responsive" id="tableContainer">
-            @include('petugas.laporan._table')
+            @include('admin.laporan._table')
         </div>
     </div>
 </section>

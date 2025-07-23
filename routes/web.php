@@ -57,10 +57,11 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
     Route::put('/admin/user/{id}', [AdminUserController::class, 'update'])->name('admin.user.update');
 
-
     Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('user', AdminUserController::class);
     });
 
+    Route::get('/admin/laporan', [PelaporanController::class, 'adminLaporan'])->name('admin.laporan.index');
 
+    Route::get('/admin/laporan/{id}', [PelaporanController::class, 'showAdminLaporan'])->name('admin.laporan.show');
 });
