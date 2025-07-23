@@ -183,3 +183,83 @@ form.d-flex .btn-outline-secondary.btn-sm:hover {
 form.d-flex .btn-outline-secondary.btn-sm:hover i {
     color: white;
 }
+
+@media (max-width: 576px) {
+    /* Jumbotron overlay: teks jadi tengah & padding lebih kecil */
+    .jumbotron-overlay {
+        margin-left: 0;
+        border-radius: 0;
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+
+    .jumbotron-overlay h1 {
+        font-size: 1.5rem;
+    }
+
+    .jumbotron-overlay p {
+        font-size: 0.95rem;
+    }
+
+    /* Tombol Lapor + Form cari jadi stack */
+    .d-flex.justify-content-between.align-items-center {
+        flex-direction: column;
+        align-items: stretch !important;
+        gap: 1rem;
+    }
+
+    #btnLaporSampah {
+        width: 100%;
+        font-size: 1rem;
+        padding: 12px 18px;
+    }
+
+    form.d-flex {
+        flex-direction: row;
+        width: 100%;
+        gap: 8px;
+    }
+
+    input.search.pelaporan {
+        flex: 1;
+        font-size: 0.95rem;
+        padding: 10px 16px;
+    }
+
+    form.d-flex .btn-outline-secondary.btn-sm {
+        flex-shrink: 0;
+        padding: 10px 16px;
+        font-size: 0.95rem;
+    }
+
+    /* Table responsive: scrollable */
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    .table-custom thead {
+        font-size: 0.85rem;
+    }
+
+    .table-custom tbody td {
+        font-size: 0.85rem;
+        padding: 8px 6px;
+    }
+
+    .table-custom tbody td:nth-child(2) {
+        padding-left: 10px;
+    }
+
+    /* Pagination responsif */
+    .pagination-custom li a,
+    .pagination-custom li span {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+
+    /* Responsive heading */
+    h4.fw-bold {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+}

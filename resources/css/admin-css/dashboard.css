@@ -162,6 +162,14 @@ body {
     .admin-dashboard {
         padding: 20px;
     }
+    
+    .admin-dashboard .counter {
+        display: inherit;
+    }
+ 
+    .top-banner {
+        height: 60vh;
+    }
 
     .top-banner-content h1 {
         font-size: 1.4rem;

@@ -69,3 +69,78 @@ div.card-body {
 .tx-info {
     color: #04709A;
 }
+
+@media (max-width: 576px) {
+    .grid-artikel {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .card-artikel {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .card-artikel img {
+        width: 100%;
+        height: auto;
+    }
+
+    .position-relative.mx-auto {
+        width: 100% !important;
+        height: 140px !important;
+    }
+
+    .col-md-10.col-lg-3 {
+        flex-direction: column !important;
+        align-items: center;
+    }
+
+    .col-md-10.col-lg-3 .flex-fill {
+        width: 100%;
+    }
+
+    .fw-bold.fs-2 {
+        font-size: 1.1rem !important;
+    }
+
+    .jumbotron .row {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .jumbtron_img img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .col-md-6.col-lg-5 {
+        width: 100%;
+    }
+
+    .display-6 {
+        font-size: 1.5rem;
+    }
+
+    .fs-3 {
+        font-size: 1rem !important;
+    }
+
+    .container2 {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .d-flex.justify-content-between {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}

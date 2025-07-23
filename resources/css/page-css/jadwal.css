@@ -90,34 +90,20 @@ body {
   color: #6c757d;
 }
 
-/* Responsif untuk HP */
 @media (max-width: 576px) {
-  .jadwal-card {
-    flex-direction: column;
-    border-radius: 20px;
-    max-width: 100%;
-  }
-
-  .hari {
-    border-radius: 20px 20px 0 0;
-    padding: 20px;
-    font-size: 1.1rem;
-    min-width: 100%;
-  }
-
-  .info {
-    border-radius: 0 0 20px 20px;
-    padding: 20px;
-    text-align: center;
-  }
-}
-
-/* Responsif gambar preview Dropzone */
-#previewContainer img {
-  width: 100% !important;
-  height: auto !important;
-  max-width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
-  object-fit: cover;
+    .text-jadwal {
+        width: 400px;
+        padding-top: 4.5rem;
+        padding-bottom: 40px;
+        translate: -50%;
+        text-align: center;
+    }
+    
+    .text-jadwal h1 {
+        translate: -15%;
+    }
+    
+    .text-jadwal .piramid-text p {
+        font-size: 18px;
+    }
 }

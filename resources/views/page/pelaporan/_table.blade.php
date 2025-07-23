@@ -21,7 +21,7 @@
                 <td>
                     <span class="badge {{ $p->status == 'tertunda' ? 'bg-warning' : 'bg-success' }}">
                         {{ ucfirst($p->status) }}
-                    </span>
+                    </span> 
                 </td>
                 <td>
                     <div class="btn-group btn-group-sm">

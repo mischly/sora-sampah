@@ -31,16 +31,14 @@
                 <p><strong>Jenis Sampah:</strong> {{ $pelaporan->jenis_sampah }}</p>
                 <p><strong>Deskripsi:</strong></p>
                 <div class="desc-box">{{ $pelaporan->informasi_tambahan }}</div>
-                @if (Auth::check() && Auth::user()->hasRole('petugas'))    
-                    @if ($pelaporan->status === 'tertunda')
-                    <form id="form-selesai" method="POST" action="{{ route('petugas.laporan.selesai', $pelaporan->id) }}">
-                        @csrf
-                        @method('PATCH')
-                        <button type="button" id="btn-konfirmasi" class="btn btn-success mt-4 w-100" title="Tandai Selesai">
-                            Perbarui Status Laporan ke Selesai <i class="fas fa-check-circle"></i>
-                        </button>
-                    </form>
-                    @endif
+                @if ($pelaporan->status === 'tertunda')
+                <form id="form-selesai" method="POST" action="{{ route('petugas.laporan.selesai', $pelaporan->id) }}">
+                    @csrf
+                    @method('PATCH')
+                    <button type="button" id="btn-konfirmasi" class="btn btn-success mt-4 w-100" title="Tandai Selesai">
+                        Perbarui Status Laporan ke Selesai <i class="fas fa-check-circle"></i>
+                    </button>
+                </form>
                 @endif
             </div>
 

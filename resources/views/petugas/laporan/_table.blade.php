@@ -34,7 +34,7 @@
             </tr>
         @empty
             <tr>
-                <td colspan="7" class="text-center text-white py-4">Belum ada laporan masuk.</td>
+                <td colspan="7" class="text-center text-white py-4">Belum ada laporan masuk.</td> 
             </tr>
         @endforelse
     </tbody>

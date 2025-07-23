@@ -139,7 +139,7 @@
                                     <img src="{{ asset('storage/' . Auth::user()->avatar) }}" alt="Avatar" class="avatar-img">
                                 @else
                                     <i class="bi bi-person-circle"></i>
-                                @endif
+                                @endif  
                                 </a>
 
                                 <ul class="dropdown-menu dropdown-menu-end animated-dropdown" aria-labelledby="navbarDropdown">
@@ -155,6 +155,21 @@
                                         @csrf
                                     </form>
                                 </ul>
+                            </li>
+                            {{-- MOBILE LINKS SEPARATELY --}}
+                            <li class="nav-item d-block d-sm-none">
+                                <a class="nav-link {{ request()->is('profil') ? 'active' : '' }}" href="{{ route('profile.index') }}">
+                                    <i class="bi bi-person me-1"></i> Profil
+                                </a>
+                            </li>
+                            <li class="nav-item d-block d-sm-none">
+                                <a class="nav-link text-danger" href="{{ route('logout') }}"
+                                onclick="event.preventDefault(); document.getElementById('logout-form-mobile').submit();">
+                                    <i class="bi bi-box-arrow-right me-1"></i> Logout
+                                </a>
+                                <form id="logout-form-mobile" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
                             </li>
                         @endguest
                     </ul>

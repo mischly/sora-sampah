@@ -205,60 +205,124 @@ img.bottle-img {
 
 /* - RESPONSIVE */
 
-@media (max-width: 768px) {
-    .content-wrapper {
-        padding-left: 0;
+@media (max-width: 992px) {
+    h1.big-title {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+
+    .jumbtron_img img {
+        width: 100%;
+        max-width: 350px;
         margin-top: 2rem;
     }
 
-    .logo-img {
-        max-width: 250px;
+    .content-wrapper {
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
 
-    .visi-text {
-        padding-right: 0;
-        text-align: left;
-    }
-
-    .visi-badge,
-    .misi-badge {
-        font-size: 1rem;
-        padding: 10px 25px;
-    }
-
-    .misi-item {
-        font-size: 0.95rem;
-    }
-    
-    .visi-misi-section {
-        padding: 2rem 0;
-    }
-
-    .row.align-items-center {
-        min-height: auto;
+    .tb-list {
+        padding-left: 1rem;
     }
 }
 
-@media (max-width: 576px) {
-    .hero {
-        padding-top: 1.9rem;
+@media (max-width: 768px) {
+    .jumbotron {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    .col-md-6,
+    .col-lg-5,
+    .col-lg-7,
+    .col-md-5 {
+        text-align: center;
+    }
+
+    a.daftar,
+    a.btn-join {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+        display: inline-block;
+        margin: 0.5rem auto;
+    }
+
+    h1.target,
+    h1.benefit {
+        font-size: 1.5rem;
+        min-height: 45px;
+    }
+
+    ul.tb-list li {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .subtitle-jumbotron2 h1 {
+        font-size: 1.8rem;
+    }
+
+    .subtitle-jumbotron2 h4 {
+        font-size: 1.2rem;
+    }
+
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .bottle-img,
+    .recycle-img {
+        height: 250px;
     }
 
     .logo-img {
         max-width: 200px;
     }
 
+    .visi-text,
+    .misi-item {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        padding-top: 5rem;
+    }
+
+    h1.big-title {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+        padding: 0 0.5rem;
+    }
+
+    .tb-list {
+        padding-left: 0;
+    }
+
     .visi-badge,
     .misi-badge {
-        font-size: 0.9rem;
-        padding: 8px 20px;
+        font-size: 0.85rem;
+        padding: 8px 16px;
     }
 
     .visi-text {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .misi-item {
         font-size: 0.9rem;
+        padding-left: 20px;
+    }
+
+    .misi-item::before {
+        font-size: 1.2rem;
+        top: 6px;
     }
 }

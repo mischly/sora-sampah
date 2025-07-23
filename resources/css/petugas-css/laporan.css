@@ -178,3 +178,53 @@ h4.fw-bold {
     font-family: 'Poppins';
     font-size: 24px;
 }
+
+@media (max-width: 576px) {
+    /* Table responsive: scrollable */
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    .table-custom thead {
+        font-size: 0.85rem;
+    }
+
+    .table-custom tbody td {
+        font-size: 0.85rem;
+        padding: 8px 6px;
+    }
+
+    .table-custom tbody td:nth-child(2) {
+        padding-left: 10px;
+    }
+
+    /* Pagination responsif */
+    .pagination-custom li a,
+    .pagination-custom li span {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }/* Table responsive: scrollable */
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    .table-custom thead {
+        font-size: 0.85rem;
+    }
+
+    .table-custom tbody td {
+        font-size: 0.85rem;
+        padding: 8px 6px;
+    }
+
+    .table-custom tbody td:nth-child(2) {
+        padding-left: 10px;
+    }
+
+    /* Pagination responsif */
+    .pagination-custom li a,
+    .pagination-custom li span {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+}

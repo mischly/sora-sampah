@@ -37,3 +37,8 @@
     color: #6c757d;
 }
 
+@media (max-width:576px) {
+    .profile-wrapper {
+        padding-top: 6.8rem;
+    }
+}

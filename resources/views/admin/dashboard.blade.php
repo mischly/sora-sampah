@@ -37,7 +37,7 @@
             @endphp
 
             @foreach ($cards as $card)
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-4 col-sm-6 counter">
                     <div class="stat-card">
                         <div class="stat-image-wrapper">
                             <img src="{{ asset('images/' . $card['img']) }}" class="stat-image" alt="{{ $card['title'] }}">

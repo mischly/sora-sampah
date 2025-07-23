@@ -111,18 +111,55 @@
     display: block;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 img.register {
     border-radius: 28px;
+}
+
+@media (max-width: 576px) {
+    .hero-login {
+        margin-top: 3rem;
+        padding-bottom: 50px;
+    }
+
+    .card-login {
+        padding: 2rem 1rem !important;
+    }
+
+    .card-login .row {
+        flex-direction: column;
+    }
+
+    .card-login .col-md-6 {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .card-login img.register {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+
+    .card-login form {
+        padding: 0;
+    }
+
+    .input-wrapper .form-control {
+        font-size: 1rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 0.6rem 1rem;
+    }
+
+    .text-muted {
+        font-size: 0.8rem;
+    }
+
+    .mb-3.text-center.small,
+    .text-center.mt-3.small {
+        font-size: 0.85rem;
+    }
 }

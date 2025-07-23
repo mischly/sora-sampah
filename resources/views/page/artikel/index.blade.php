@@ -91,7 +91,7 @@
             <!-- Kolom Kiri -->
             <div class="col-lg-7">
                 <div class="border-0 overflow-hidden rounded">
-                    <div class="position-relative" style="height: 400px; width:1500px;">
+                    <div class="position-relative">
                         <img src="{{ asset('images/jumbotron9.webp') }}" class="w-50 h-100" style="object-fit: cover;" alt="Blog Image">
                         <div class="blog">                
                             <h1 class="position-absolute text-white m-0 px-2 py-1" style="bottom: 0; left: 0px; background-color: #99D45C;">PDF</h1>

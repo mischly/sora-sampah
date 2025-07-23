@@ -162,3 +162,23 @@
     border-radius: 50%;
     display: block;
 }
+
+@media (max-width: 576px) {
+    .navbar-nav .nav-link.active {
+        background-color: #99fe99;
+        border-radius: 6px;
+        padding-left: 15px;
+    }
+
+    .navbar-nav .nav-link.active::after {
+        display: none;
+    }
+
+    .navbar-nav .nav-link:hover::after {
+        width: 0;
+    }
+
+    #navbarDropdown {
+        display: none;
+    }
+}

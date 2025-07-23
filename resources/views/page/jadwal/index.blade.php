@@ -10,7 +10,7 @@
     <div class="jumbotron d-flex align-items-center py-5">
         <div>
             <div class="bg-1 row justify-content-center align-items-center" >
-                <div class="col-md-6 col-lg-5 ">
+                <div class="col-md-6 col-lg-5 text-jadwal">
                     <h1 class="big-title e-bold text-white fs-1">Jadwal Pengambilan Sampah</h1> 
                     <br>
                     <div class="piramid-text text-white">

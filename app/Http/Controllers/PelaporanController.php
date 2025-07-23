@@ -47,7 +47,7 @@ class PelaporanController extends Controller
             ->withQueryString();     
             
         if ($request->ajax()) {
-            return view('page.pelaporan._table', compact('pelaporans', 'search'))->render();
+            return view('admin.laporan._table', compact('pelaporans', 'search'))->render();
         }
 
         return view('admin.laporan.index', compact('pelaporans', 'search'));
@@ -138,7 +138,7 @@ class PelaporanController extends Controller
     public function showAdminLaporan($id)
     {
         $pelaporan = Pelaporan::findOrFail($id);
-        return view('page.pelaporan.show', compact('pelaporan'));
+        return view('admin.laporan.show', compact('pelaporan'));
     }
 
     public function showPetugas($id)
